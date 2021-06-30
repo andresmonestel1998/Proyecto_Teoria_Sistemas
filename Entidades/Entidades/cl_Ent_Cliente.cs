@@ -19,7 +19,5 @@ namespace Entidades.Entidades
             public string Correo { get => correo; set => correo = value; }
             public string Telefono { get => telefono; set => telefono = value; }
         #endregion
-
-
     }
 }
