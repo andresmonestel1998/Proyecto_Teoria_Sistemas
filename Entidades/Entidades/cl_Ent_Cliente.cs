@@ -11,6 +11,7 @@ namespace Entidades.Entidades
         #region variables
             private string nombre, cedula, correo, telefono;
             //hola
+            //Saludos
         #endregion
         //asdasdasda
         #region constructores
