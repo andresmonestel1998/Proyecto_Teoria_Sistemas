@@ -12,7 +12,7 @@ namespace Entidades.Entidades
             private string nombre, cedula, correo, telefono;
 
         #endregion
-        //asdasdasdasdasdasd
+        //asdasdasdasdasdasdsdfsdfsdf
         #region constructores
             public string Nombre { get => nombre; set => nombre = value; }
             public string Cedula { get => cedula; set => cedula = value; }
