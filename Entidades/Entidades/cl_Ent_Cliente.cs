@@ -10,7 +10,7 @@ namespace Entidades.Entidades
     {
         #region variables
             private string nombre, cedula, correo, telefono;
-
+            //hola
         #endregion
         //asdasdasdasdasdasdsdfsdfsdf
         #region constructores
