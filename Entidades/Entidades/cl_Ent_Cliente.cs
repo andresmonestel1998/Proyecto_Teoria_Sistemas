@@ -13,6 +13,10 @@ namespace Entidades.Entidades
             //hola
             //Saludos
 
+        /// <summary>
+        /// 
+        /// </summary>
+
         //hola
         #endregion
         //asdasdasda
