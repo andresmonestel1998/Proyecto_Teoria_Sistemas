@@ -12,6 +12,8 @@ namespace Entidades.Entidades
             private string nombre, cedula, correo, telefono;
             //hola
             //Saludos
+
+        //hola
         #endregion
         //asdasdasda
         #region constructores
