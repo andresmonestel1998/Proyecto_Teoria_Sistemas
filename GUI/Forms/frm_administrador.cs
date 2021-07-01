@@ -18,5 +18,18 @@ namespace GUI.Forms
             InitializeComponent();
             this.Text = "Bienvenido: " + nombre + " " + apellidos;
         }
+
+        private void EmpleadosTab_Click(object sender, EventArgs e)
+        {
+            if (EmpleadosTab.SelectedTab == tabCerrarSesion)
+            {
+                if (MessageBox.Show("Desea cerrar sesión?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Close();
+                    frm_login log = new frm_login();
+                    log.Show();
+                }
+            }
+        }
     }
 }
