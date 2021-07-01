@@ -14,7 +14,7 @@ namespace Datos.DatosUsuario
     public class cl_dat_Usuario
     {
         SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
-
+        //conexion
         public DataTable LoginUsuario(String user, String pass)
         {
             SqlCommand Comando = new SqlCommand("Autentificacion", Conextion);
