@@ -73,5 +73,12 @@ namespace GUI.Forms
                 MessageBox.Show("Se ha producido un error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_registro registro = new frm_registro();
+            registro.Show();
+            this.Hide();
+        }
     }
 }

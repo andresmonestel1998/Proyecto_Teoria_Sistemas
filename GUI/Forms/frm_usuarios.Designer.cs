@@ -47,6 +47,7 @@ namespace GUI.Forms
             this.tbControlUsuarios.SelectedIndex = 0;
             this.tbControlUsuarios.Size = new System.Drawing.Size(1054, 644);
             this.tbControlUsuarios.TabIndex = 0;
+            this.tbControlUsuarios.Click += new System.EventHandler(this.tbControlUsuarios_Click);
             // 
             // tabReservar
             // 
