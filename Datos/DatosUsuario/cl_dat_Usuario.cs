@@ -13,7 +13,7 @@ namespace Datos.DatosUsuario
 {
     public class cl_dat_Usuario
     {
-        SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
+        SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["Valor"].ConnectionString);
 
         public DataTable LoginUsuario(String user, String pass)
         {
