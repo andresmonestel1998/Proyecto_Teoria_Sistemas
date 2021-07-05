@@ -235,6 +235,7 @@ namespace GUI.Forms
             this.btnGuardarNuevoUsuario.TabIndex = 7;
             this.btnGuardarNuevoUsuario.Text = "Guardar";
             this.btnGuardarNuevoUsuario.UseVisualStyleBackColor = true;
+            this.btnGuardarNuevoUsuario.Click += new System.EventHandler(this.btnGuardarNuevoUsuario_Click);
             // 
             // groupBox2
             // 

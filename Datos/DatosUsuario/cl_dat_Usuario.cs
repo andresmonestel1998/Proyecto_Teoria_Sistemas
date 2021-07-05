@@ -48,12 +48,12 @@ namespace Datos.DatosUsuario
             {
                 SqlCommand Comando = new SqlCommand("NuevoUsuario", Conextion);
 
-                Comando.Parameters.Add("@v_cedulaUsuario", SqlDbType.NVarChar).Value = usuario._SContrasena;
-                Comando.Parameters.Add("@v_idRol", SqlDbType.Int).Value = usuario._IIdRol;
-                Comando.Parameters.Add("@v_nombreCompleto", SqlDbType.NVarChar).Value = usuario._SNombre;
-                Comando.Parameters.Add("@v_correo", SqlDbType.NVarChar).Value = usuario._SCorreo;
-                Comando.Parameters.Add("@v_contra", SqlDbType.NVarChar).Value = usuario._SContrasena;
-                Comando.Parameters.Add("@v_telefono", SqlDbType.NVarChar).Value = usuario._STelefono;
+                Comando.Parameters.Add("@cedulaUsuario", SqlDbType.NVarChar).Value = usuario._SCedulaUsuario;
+                Comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = usuario._SNombre;
+                Comando.Parameters.Add("@correo", SqlDbType.NVarChar).Value = usuario._SCorreo;
+                Comando.Parameters.Add("@telefono", SqlDbType.NVarChar).Value = usuario._STelefono;
+                Comando.Parameters.Add("@contrasena", SqlDbType.NVarChar).Value = usuario._SContrasena;
+                Comando.Parameters.Add("@idRol", SqlDbType.Int).Value = usuario._IIdRol;
 
                 Comando.CommandType = CommandType.StoredProcedure;
 
@@ -101,14 +101,14 @@ namespace Datos.DatosUsuario
 
                 SqlCommand Comando = new SqlCommand("EditarUsuario", Conextion);
 
-                Comando.Parameters.Add("@v_cedulaUsuario", SqlDbType.NVarChar).Value = usuario._SContrasena;
-                Comando.Parameters.Add("@v_idRol", SqlDbType.Int).Value = usuario._IIdRol;
-                Comando.Parameters.Add("@v_nombreCompleto", SqlDbType.NVarChar).Value = usuario._SNombre;
-                Comando.Parameters.Add("@v_correo", SqlDbType.NVarChar).Value = usuario._SCorreo;
-                Comando.Parameters.Add("@v_contra", SqlDbType.NVarChar).Value = usuario._SContrasena;
-                Comando.Parameters.Add("@v_telefono", SqlDbType.NVarChar).Value = usuario._STelefono;
+                Comando.Parameters.Add("@cedulaUsuario", SqlDbType.NVarChar).Value = usuario._SCedulaUsuario;
+                Comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = usuario._SNombre;
+                Comando.Parameters.Add("@correo", SqlDbType.NVarChar).Value = usuario._SCorreo;
+                Comando.Parameters.Add("@telefono", SqlDbType.NVarChar).Value = usuario._STelefono;
+                Comando.Parameters.Add("@contrasena", SqlDbType.NVarChar).Value = usuario._SContrasena;
+                Comando.Parameters.Add("@idRol", SqlDbType.Int).Value = usuario._IIdRol;
 
-                Comando.CommandType = CommandType.StoredProcedure;
+            Comando.CommandType = CommandType.StoredProcedure;
 
                 Conextion.Open();
                 Comando.ExecuteNonQuery();
