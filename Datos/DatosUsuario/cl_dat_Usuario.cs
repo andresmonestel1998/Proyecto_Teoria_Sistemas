@@ -75,7 +75,7 @@ namespace Datos.DatosUsuario
             public DataTable BuscarUsuario(String cedula)
             {
                 SqlCommand Comando = new SqlCommand("BuscarUsuario", Conextion);
-                Comando.Parameters.Add("@v_cedulaUsuario", SqlDbType.NVarChar).Value = cedula;
+                Comando.Parameters.Add("@cedulaUsuario", SqlDbType.NVarChar).Value = cedula;
                 Comando.CommandType = CommandType.StoredProcedure;
                 Conextion.Open();
                 SqlDataReader ObjReader = Comando.ExecuteReader();

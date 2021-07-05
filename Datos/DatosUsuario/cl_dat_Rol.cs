@@ -28,5 +28,25 @@ namespace Datos.DatosUsuario
             Conextion.Close();
             return tabla;
         }
+
+
+        public String cargarIDRol()
+        {
+            String NumFactura = "";
+            SqlCommand Comando = new SqlCommand("CargarNumRol", Conextion);
+            Conextion.Open();
+            SqlDataReader ObjReader = Comando.ExecuteReader();
+
+            if (ObjReader.Read())
+            {
+                NumFactura = ObjReader["id"].ToString();
+            }
+            else
+            {
+                NumFactura = "";
+            }
+            Conextion.Close();
+            return NumFactura;
+        }
     }
 }

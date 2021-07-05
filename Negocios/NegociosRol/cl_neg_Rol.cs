@@ -15,5 +15,10 @@ namespace Negocios.NegociosRol
         {
             return datRol.cargarComboBoxRol();
         }
+        public String cargarIDRol()
+        {
+            return datRol.cargarIDRol();
+        }
+
     }
 }
