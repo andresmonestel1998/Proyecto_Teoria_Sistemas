@@ -45,19 +45,19 @@ namespace GUI.Forms
                 {
                     if (tablaUsuarios.Rows[0][0].ToString().Equals("Administrador"))
                     {
-                        frm_administrador openAdmin = new frm_administrador(tablaUsuarios.Rows[0][1].ToString(), tablaUsuarios.Rows[0][2].ToString());
+                        frm_administrador openAdmin = new frm_administrador(tablaUsuarios.Rows[0][1].ToString());
                         openAdmin.Show();
                         this.Hide();
                     }
                     else if(tablaUsuarios.Rows[0][0].ToString().Equals("Invitado"))
                     {
-                        frm_usuarios openUser = new frm_usuarios(tablaUsuarios.Rows[0][1].ToString(), tablaUsuarios.Rows[0][2].ToString());
+                        frm_usuarios openUser = new frm_usuarios(tablaUsuarios.Rows[0][1].ToString());
                         openUser.Show();
                         this.Hide();
                     }
                     else if(tablaUsuarios.Rows[0][0].ToString().Equals("Cliente"))
                     {
-                        frm_usuarios openUser = new frm_usuarios(tablaUsuarios.Rows[0][1].ToString(), tablaUsuarios.Rows[0][2].ToString());
+                        frm_usuarios openUser = new frm_usuarios(tablaUsuarios.Rows[0][1].ToString());
                         openUser.Show();
                         this.Hide();
                     }

@@ -204,6 +204,7 @@ namespace GUI.Forms
             this.btnConsultarNuevoUsuario.TabIndex = 9;
             this.btnConsultarNuevoUsuario.Text = "Consultar";
             this.btnConsultarNuevoUsuario.UseVisualStyleBackColor = true;
+            this.btnConsultarNuevoUsuario.Click += new System.EventHandler(this.btnConsultarNuevoUsuario_Click);
             // 
             // dataGridConsultaUsuario
             // 

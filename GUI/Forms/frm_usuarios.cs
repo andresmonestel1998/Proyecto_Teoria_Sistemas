@@ -12,10 +12,10 @@ namespace GUI.Forms
 {
     public partial class frm_usuarios : Form
     {
-        public frm_usuarios(String nombre, String apellidos)
+        public frm_usuarios(String nombre)
         {
             InitializeComponent();
-            this.Text = "Bienvenido: " + nombre + " " + apellidos;
+            this.Text = "Bienvenido: " + nombre;
         }
 
         private void tbControlUsuarios_Click(object sender, EventArgs e)
