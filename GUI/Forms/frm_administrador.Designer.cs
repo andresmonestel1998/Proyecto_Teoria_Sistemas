@@ -33,10 +33,10 @@ namespace GUI.Forms
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.SubEmpleados = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.btnConsultarNuevoEmpleado = new System.Windows.Forms.Button();
-            this.dataGridConsultaNuevo = new System.Windows.Forms.DataGridView();
-            this.btnLimpiarNuevoEmpleado = new System.Windows.Forms.Button();
-            this.btnGuardarNuevoEmpleado = new System.Windows.Forms.Button();
+            this.btnConsultarNuevoUsuario = new System.Windows.Forms.Button();
+            this.dataGridConsultaUsuario = new System.Windows.Forms.DataGridView();
+            this.btnLimpiarNuevoUsuario = new System.Windows.Forms.Button();
+            this.btnGuardarNuevoUsuario = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbRolNuevo = new System.Windows.Forms.ComboBox();
             this.txtContraNuevo = new System.Windows.Forms.TextBox();
@@ -123,7 +123,7 @@ namespace GUI.Forms
             this.tabPage1.SuspendLayout();
             this.SubEmpleados.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultaNuevo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultaUsuario)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -165,7 +165,7 @@ namespace GUI.Forms
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1296, 632);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Empleados";
+            this.tabPage1.Text = "Gestionar Usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // SubEmpleados
@@ -182,10 +182,10 @@ namespace GUI.Forms
             // 
             // tabPage7
             // 
-            this.tabPage7.Controls.Add(this.btnConsultarNuevoEmpleado);
-            this.tabPage7.Controls.Add(this.dataGridConsultaNuevo);
-            this.tabPage7.Controls.Add(this.btnLimpiarNuevoEmpleado);
-            this.tabPage7.Controls.Add(this.btnGuardarNuevoEmpleado);
+            this.tabPage7.Controls.Add(this.btnConsultarNuevoUsuario);
+            this.tabPage7.Controls.Add(this.dataGridConsultaUsuario);
+            this.tabPage7.Controls.Add(this.btnLimpiarNuevoUsuario);
+            this.tabPage7.Controls.Add(this.btnGuardarNuevoUsuario);
             this.tabPage7.Controls.Add(this.groupBox2);
             this.tabPage7.Controls.Add(this.label14);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
@@ -193,47 +193,47 @@ namespace GUI.Forms
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(1282, 597);
             this.tabPage7.TabIndex = 0;
-            this.tabPage7.Text = "Nuevo Empleado";
+            this.tabPage7.Text = "Nuevo Usuario";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // btnConsultarNuevoEmpleado
+            // btnConsultarNuevoUsuario
             // 
-            this.btnConsultarNuevoEmpleado.Location = new System.Drawing.Point(514, 476);
-            this.btnConsultarNuevoEmpleado.Name = "btnConsultarNuevoEmpleado";
-            this.btnConsultarNuevoEmpleado.Size = new System.Drawing.Size(110, 34);
-            this.btnConsultarNuevoEmpleado.TabIndex = 9;
-            this.btnConsultarNuevoEmpleado.Text = "Consultar";
-            this.btnConsultarNuevoEmpleado.UseVisualStyleBackColor = true;
+            this.btnConsultarNuevoUsuario.Location = new System.Drawing.Point(514, 476);
+            this.btnConsultarNuevoUsuario.Name = "btnConsultarNuevoUsuario";
+            this.btnConsultarNuevoUsuario.Size = new System.Drawing.Size(110, 34);
+            this.btnConsultarNuevoUsuario.TabIndex = 9;
+            this.btnConsultarNuevoUsuario.Text = "Consultar";
+            this.btnConsultarNuevoUsuario.UseVisualStyleBackColor = true;
             // 
-            // dataGridConsultaNuevo
+            // dataGridConsultaUsuario
             // 
-            this.dataGridConsultaNuevo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridConsultaNuevo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridConsultaNuevo.Location = new System.Drawing.Point(523, 23);
-            this.dataGridConsultaNuevo.Name = "dataGridConsultaNuevo";
-            this.dataGridConsultaNuevo.ReadOnly = true;
-            this.dataGridConsultaNuevo.RowHeadersWidth = 51;
-            this.dataGridConsultaNuevo.RowTemplate.Height = 24;
-            this.dataGridConsultaNuevo.Size = new System.Drawing.Size(847, 424);
-            this.dataGridConsultaNuevo.TabIndex = 31;
+            this.dataGridConsultaUsuario.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridConsultaUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridConsultaUsuario.Location = new System.Drawing.Point(523, 23);
+            this.dataGridConsultaUsuario.Name = "dataGridConsultaUsuario";
+            this.dataGridConsultaUsuario.ReadOnly = true;
+            this.dataGridConsultaUsuario.RowHeadersWidth = 51;
+            this.dataGridConsultaUsuario.RowTemplate.Height = 24;
+            this.dataGridConsultaUsuario.Size = new System.Drawing.Size(847, 424);
+            this.dataGridConsultaUsuario.TabIndex = 31;
             // 
-            // btnLimpiarNuevoEmpleado
+            // btnLimpiarNuevoUsuario
             // 
-            this.btnLimpiarNuevoEmpleado.Location = new System.Drawing.Point(139, 464);
-            this.btnLimpiarNuevoEmpleado.Name = "btnLimpiarNuevoEmpleado";
-            this.btnLimpiarNuevoEmpleado.Size = new System.Drawing.Size(90, 34);
-            this.btnLimpiarNuevoEmpleado.TabIndex = 8;
-            this.btnLimpiarNuevoEmpleado.Text = "Limpiar";
-            this.btnLimpiarNuevoEmpleado.UseVisualStyleBackColor = true;
+            this.btnLimpiarNuevoUsuario.Location = new System.Drawing.Point(139, 464);
+            this.btnLimpiarNuevoUsuario.Name = "btnLimpiarNuevoUsuario";
+            this.btnLimpiarNuevoUsuario.Size = new System.Drawing.Size(90, 34);
+            this.btnLimpiarNuevoUsuario.TabIndex = 8;
+            this.btnLimpiarNuevoUsuario.Text = "Limpiar";
+            this.btnLimpiarNuevoUsuario.UseVisualStyleBackColor = true;
             // 
-            // btnGuardarNuevoEmpleado
+            // btnGuardarNuevoUsuario
             // 
-            this.btnGuardarNuevoEmpleado.Location = new System.Drawing.Point(20, 464);
-            this.btnGuardarNuevoEmpleado.Name = "btnGuardarNuevoEmpleado";
-            this.btnGuardarNuevoEmpleado.Size = new System.Drawing.Size(103, 34);
-            this.btnGuardarNuevoEmpleado.TabIndex = 7;
-            this.btnGuardarNuevoEmpleado.Text = "Guardar";
-            this.btnGuardarNuevoEmpleado.UseVisualStyleBackColor = true;
+            this.btnGuardarNuevoUsuario.Location = new System.Drawing.Point(20, 464);
+            this.btnGuardarNuevoUsuario.Name = "btnGuardarNuevoUsuario";
+            this.btnGuardarNuevoUsuario.Size = new System.Drawing.Size(103, 34);
+            this.btnGuardarNuevoUsuario.TabIndex = 7;
+            this.btnGuardarNuevoUsuario.Text = "Guardar";
+            this.btnGuardarNuevoUsuario.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -254,7 +254,7 @@ namespace GUI.Forms
             this.groupBox2.Size = new System.Drawing.Size(473, 373);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Empleados";
+            this.groupBox2.Text = "Usuarios";
             // 
             // cmbRolNuevo
             // 
@@ -362,9 +362,9 @@ namespace GUI.Forms
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(155, 24);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(176, 25);
+            this.label14.Size = new System.Drawing.Size(154, 25);
             this.label14.TabIndex = 27;
-            this.label14.Text = "Nuevo Empleado";
+            this.label14.Text = "Nuevo Usuario";
             // 
             // tabPage8
             // 
@@ -377,7 +377,7 @@ namespace GUI.Forms
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1752, 991);
+            this.tabPage8.Size = new System.Drawing.Size(1282, 597);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Búsqueda Especifica";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -418,7 +418,7 @@ namespace GUI.Forms
             this.groupBox3.Size = new System.Drawing.Size(437, 136);
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Empleados";
+            this.groupBox3.Text = "Usuarios";
             // 
             // label17
             // 
@@ -443,9 +443,9 @@ namespace GUI.Forms
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(153, 23);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(222, 25);
+            this.label21.Size = new System.Drawing.Size(197, 25);
             this.label21.TabIndex = 34;
-            this.label21.Text = "Búsqueda Empleados";
+            this.label21.Text = "Búsqueda usuarios";
             // 
             // dataGridBuscar
             // 
@@ -467,9 +467,9 @@ namespace GUI.Forms
             this.frmEmpleadoEditar.Controls.Add(this.label23);
             this.frmEmpleadoEditar.Location = new System.Drawing.Point(4, 25);
             this.frmEmpleadoEditar.Name = "frmEmpleadoEditar";
-            this.frmEmpleadoEditar.Size = new System.Drawing.Size(1752, 991);
+            this.frmEmpleadoEditar.Size = new System.Drawing.Size(1282, 597);
             this.frmEmpleadoEditar.TabIndex = 2;
-            this.frmEmpleadoEditar.Text = "Editar Empleado";
+            this.frmEmpleadoEditar.Text = "Editar Usuario";
             this.frmEmpleadoEditar.UseVisualStyleBackColor = true;
             // 
             // btnModificaEmpleado
@@ -521,7 +521,7 @@ namespace GUI.Forms
             this.gBoxEditar.Size = new System.Drawing.Size(473, 373);
             this.gBoxEditar.TabIndex = 38;
             this.gBoxEditar.TabStop = false;
-            this.gBoxEditar.Text = "Empleados";
+            this.gBoxEditar.Text = "Usuarios";
             // 
             // cmRolEditar
             // 
@@ -630,9 +630,9 @@ namespace GUI.Forms
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(154, 23);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(213, 25);
+            this.label23.Size = new System.Drawing.Size(191, 25);
             this.label23.TabIndex = 35;
-            this.label23.Text = "Modificar Empleados";
+            this.label23.Text = "Modificar Usuarios";
             // 
             // tabPage2
             // 
@@ -1059,7 +1059,7 @@ namespace GUI.Forms
             this.SubEmpleados.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultaNuevo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultaUsuario)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage8.ResumeLayout(false);
@@ -1099,10 +1099,10 @@ namespace GUI.Forms
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl SubEmpleados;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.Button btnConsultarNuevoEmpleado;
-        private System.Windows.Forms.DataGridView dataGridConsultaNuevo;
-        private System.Windows.Forms.Button btnLimpiarNuevoEmpleado;
-        private System.Windows.Forms.Button btnGuardarNuevoEmpleado;
+        private System.Windows.Forms.Button btnConsultarNuevoUsuario;
+        private System.Windows.Forms.DataGridView dataGridConsultaUsuario;
+        private System.Windows.Forms.Button btnLimpiarNuevoUsuario;
+        private System.Windows.Forms.Button btnGuardarNuevoUsuario;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbRolNuevo;
         private System.Windows.Forms.TextBox txtContraNuevo;
