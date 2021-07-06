@@ -71,7 +71,7 @@ namespace GUI.Forms
                     entUser._STelefono = txtTelNuevo.Text;
                     entUser._SCorreo = txtEmailNuevo.Text;
                     entUser._SContrasena = txtContraNuevo.Text;
-                    entUser._IIdRol = Convert.ToInt32(cmbRolNuevo.SelectedValue)+2;
+                    entUser._IIdRol = Convert.ToInt32(cmbRolNuevo.SelectedValue)+3;
 
                     if (negUser.NuevoUser(entUser))
                     {
