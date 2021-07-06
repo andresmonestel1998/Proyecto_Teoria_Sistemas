@@ -11,6 +11,7 @@ namespace Datos.DatosUsuario
 {
     public class cl_dat_Rol
     {
+        //comentario
         SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
 
         public DataTable cargarComboBoxRol()
