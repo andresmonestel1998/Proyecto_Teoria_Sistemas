@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NegociosLogin\cls_neg_login.cs" />
+    <Compile Include="NegociosParqueo\cl_neg_Parqueo.cs" />
     <Compile Include="NegociosRol\cl_neg_Rol.cs" />
     <Compile Include="NegociosUsuario\cl_neg_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
