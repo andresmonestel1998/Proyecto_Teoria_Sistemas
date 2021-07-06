@@ -40,6 +40,7 @@ namespace GUI.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lk_Invitado = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +129,7 @@ namespace GUI.Forms
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.lk_Invitado);
             this.groupBox1.Controls.Add(this.linkLabel1);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -156,6 +158,17 @@ namespace GUI.Forms
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Registrarse";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // lk_Invitado
+            // 
+            this.lk_Invitado.AutoSize = true;
+            this.lk_Invitado.LinkColor = System.Drawing.Color.Black;
+            this.lk_Invitado.Location = new System.Drawing.Point(467, 296);
+            this.lk_Invitado.Name = "lk_Invitado";
+            this.lk_Invitado.Size = new System.Drawing.Size(151, 17);
+            this.lk_Invitado.TabIndex = 17;
+            this.lk_Invitado.TabStop = true;
+            this.lk_Invitado.Text = "Ingresar como Invitado";
             // 
             // frm_login
             // 
@@ -187,5 +200,6 @@ namespace GUI.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lk_Invitado;
     }
 }
