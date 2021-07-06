@@ -15,6 +15,7 @@ namespace Datos.DatosUsuario
 
         public DataTable cargarComboBoxRol()
         {
+            
             SqlCommand Comando = new SqlCommand();
 
             Comando.CommandType = CommandType.StoredProcedure;
