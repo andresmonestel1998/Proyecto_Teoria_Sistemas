@@ -49,13 +49,13 @@ namespace Datos.DatosUsuario
                 SqlCommand Comando = new SqlCommand("NuevoUsuario", Conextion);
 
                 Comando.Parameters.Add("@cedulaUsuario", SqlDbType.NVarChar).Value = usuario._SCedulaUsuario;
+                Comando.Parameters.Add("@idRol", SqlDbType.Int).Value = usuario._IIdRol;
                 Comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = usuario._SNombre;
                 Comando.Parameters.Add("@correo", SqlDbType.NVarChar).Value = usuario._SCorreo;
-                Comando.Parameters.Add("@telefono", SqlDbType.NVarChar).Value = usuario._STelefono;
                 Comando.Parameters.Add("@contrasena", SqlDbType.NVarChar).Value = usuario._SContrasena;
-                Comando.Parameters.Add("@idRol", SqlDbType.Int).Value = usuario._IIdRol;
+                Comando.Parameters.Add("@telefono", SqlDbType.NVarChar).Value = usuario._STelefono;
 
-                Comando.CommandType = CommandType.StoredProcedure;
+            Comando.CommandType = CommandType.StoredProcedure;
 
                 Conextion.Open();
                 Comando.ExecuteNonQuery();
