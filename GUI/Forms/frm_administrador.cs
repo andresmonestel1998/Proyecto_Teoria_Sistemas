@@ -124,6 +124,21 @@ namespace GUI.Forms
             LimpiarNuevoUser();
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void btnBuscarEspecifica_Click(object sender, EventArgs e)
         {
             DataTable taTempo = new DataTable();
