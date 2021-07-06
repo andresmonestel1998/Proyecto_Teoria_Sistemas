@@ -13,7 +13,7 @@ namespace Datos.DatosUsuario
     {
         //comentario 2.0
         SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-
+        //keylor
         public DataTable cargarComboBoxRol()
         {
             
