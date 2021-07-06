@@ -169,6 +169,7 @@ namespace GUI.Forms
             this.lk_Invitado.TabIndex = 17;
             this.lk_Invitado.TabStop = true;
             this.lk_Invitado.Text = "Ingresar como Invitado";
+            this.lk_Invitado.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lk_Invitado_LinkClicked);
             // 
             // frm_login
             // 

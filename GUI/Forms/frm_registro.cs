@@ -25,9 +25,8 @@ namespace GUI.Forms
         {
             InitializeComponent();
             cmbRolNuevo.SelectedIndex = 0;
+            
         }
-
-
         private void tabRegistro_Click(object sender, EventArgs e)
         {
             if (tabRegistro.SelectedTab == tabSalir)
@@ -72,7 +71,7 @@ namespace GUI.Forms
                     entUser._STelefono = txtTelNuevo.Text;
                     entUser._SCorreo = txtEmailNuevo.Text;
                     entUser._SContrasena = txtContraNuevo.Text;
-                    entUser._IIdRol = Convert.ToInt32(cmbRolNuevo.SelectedValue)+1;
+                    entUser._IIdRol = Convert.ToInt32(cmbRolNuevo.SelectedValue)+2;
 
                     if (negUser.NuevoUser(entUser))
                     {

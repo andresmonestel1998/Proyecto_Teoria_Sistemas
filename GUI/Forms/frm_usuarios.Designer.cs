@@ -33,7 +33,10 @@ namespace GUI.Forms
             this.tabReservar = new System.Windows.Forms.TabPage();
             this.tabCancelar = new System.Windows.Forms.TabPage();
             this.tabSalir = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbControlUsuarios.SuspendLayout();
+            this.tabCancelar.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbControlUsuarios
@@ -61,6 +64,8 @@ namespace GUI.Forms
             // 
             // tabCancelar
             // 
+            this.tabCancelar.Controls.Add(this.label2);
+            this.tabCancelar.Controls.Add(this.label1);
             this.tabCancelar.Location = new System.Drawing.Point(4, 25);
             this.tabCancelar.Name = "tabCancelar";
             this.tabCancelar.Padding = new System.Windows.Forms.Padding(3);
@@ -78,6 +83,24 @@ namespace GUI.Forms
             this.tabSalir.Text = "Salir";
             this.tabSalir.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(202, 240);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(188, 363);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            // 
             // frm_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -85,8 +108,11 @@ namespace GUI.Forms
             this.ClientSize = new System.Drawing.Size(1054, 644);
             this.Controls.Add(this.tbControlUsuarios);
             this.Name = "frm_usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_usuarios";
             this.tbControlUsuarios.ResumeLayout(false);
+            this.tabCancelar.ResumeLayout(false);
+            this.tabCancelar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -97,5 +123,7 @@ namespace GUI.Forms
         private System.Windows.Forms.TabPage tabReservar;
         private System.Windows.Forms.TabPage tabCancelar;
         private System.Windows.Forms.TabPage tabSalir;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

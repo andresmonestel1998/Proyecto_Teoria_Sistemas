@@ -114,12 +114,12 @@ namespace GUI.Forms
             this.txtNomEditarCliente = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.dataGridEditarCliente = new System.Windows.Forms.DataGridView();
-            this.tabCerrarSesion = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabCerrarSesion = new System.Windows.Forms.TabPage();
             this.EmpleadosTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SubEmpleados.SuspendLayout();
@@ -1008,16 +1008,6 @@ namespace GUI.Forms
             this.dataGridEditarCliente.Size = new System.Drawing.Size(856, 424);
             this.dataGridEditarCliente.TabIndex = 39;
             // 
-            // tabCerrarSesion
-            // 
-            this.tabCerrarSesion.Location = new System.Drawing.Point(4, 25);
-            this.tabCerrarSesion.Name = "tabCerrarSesion";
-            this.tabCerrarSesion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCerrarSesion.Size = new System.Drawing.Size(1296, 632);
-            this.tabCerrarSesion.TabIndex = 4;
-            this.tabCerrarSesion.Text = "Cerrar sesión";
-            this.tabCerrarSesion.UseVisualStyleBackColor = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.tabControl1);
@@ -1069,6 +1059,16 @@ namespace GUI.Forms
             this.tabPage6.Text = "mas";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // tabCerrarSesion
+            // 
+            this.tabCerrarSesion.Location = new System.Drawing.Point(4, 25);
+            this.tabCerrarSesion.Name = "tabCerrarSesion";
+            this.tabCerrarSesion.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCerrarSesion.Size = new System.Drawing.Size(1296, 632);
+            this.tabCerrarSesion.TabIndex = 4;
+            this.tabCerrarSesion.Text = "Cerrar sesión";
+            this.tabCerrarSesion.UseVisualStyleBackColor = true;
+            // 
             // frm_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1077,7 +1077,7 @@ namespace GUI.Forms
             this.Controls.Add(this.EmpleadosTab);
             this.Name = "frm_administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_administrador";
+            this.Text = "frm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.EmpleadosTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

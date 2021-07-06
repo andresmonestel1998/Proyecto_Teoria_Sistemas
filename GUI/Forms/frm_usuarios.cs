@@ -12,10 +12,15 @@ namespace GUI.Forms
 {
     public partial class frm_usuarios : Form
     {
-        public frm_usuarios(String nombre)
+        public frm_usuarios(String nombre, string tipoUser)
         {
             InitializeComponent();
             this.Text = "Bienvenido: " + nombre;
+
+            if (tipoUser.Equals("Invitado"))
+            {
+                tbControlUsuarios.TabPages.Remove(tabCancelar);
+            }
         }
 
         private void tbControlUsuarios_Click(object sender, EventArgs e)
