@@ -12,7 +12,7 @@ namespace Datos.DatosUsuario
 {
     public class cl_dat_Parqueo
     {
-        SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["Valor"].ConnectionString);
+        SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
 
         public bool InsertarParqueo(cl_ent_Parqueo parqueo)
         {

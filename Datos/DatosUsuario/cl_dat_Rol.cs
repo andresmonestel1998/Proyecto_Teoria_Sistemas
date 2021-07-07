@@ -12,7 +12,7 @@ namespace Datos.DatosUsuario
     public class cl_dat_Rol
     {
         
-        SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["Valor"].ConnectionString);
+        SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
         //keylor 20
         public DataTable cargarComboBoxRol()
         {

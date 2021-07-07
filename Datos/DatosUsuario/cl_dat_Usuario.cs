@@ -15,7 +15,7 @@ namespace Datos.DatosUsuario
     public class cl_dat_Usuario
     {
         #region conex
-            SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["Valor"].ConnectionString);
+            SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
         #endregion
 
         #region metodos
