@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios.NegociosRol;
 using Negocios.NegociosUsuario;
+using Negocios.NegociosParqueo;
 using Entidades.Entidades;
 
 namespace GUI.Forms
@@ -19,6 +20,8 @@ namespace GUI.Forms
         cl_neg_Rol negRol = new cl_neg_Rol();
         cl_neg_Usuario negUser = new cl_neg_Usuario();
         cl_ent_Usuario entUser = new cl_ent_Usuario();
+        cl_ent_Parqueo entPar = new cl_ent_Parqueo();
+        cl_neg_Parqueo negPar = new cl_neg_Parqueo();
         #endregion
 
         #region constructor
@@ -242,5 +245,64 @@ namespace GUI.Forms
         {
             LimpiarEditarUsuarios();
         }
+        public Boolean ValidarNuevoParqueo()
+        {
+            bool estado = true;
+            if (mtb_CedulaJuridica.Text.Equals(" -    -") ||
+            txt_NombreParqueo.Text.Equals("") ||
+            mtb_Provincia.Text.Equals(" -    -") ||
+            txt_Canton.Text.Equals("") ||
+            txt_Distrito.Text.Equals("") ||
+            txt_Calle.Text.Equals("") ||
+            txt_DetalleParqueo.Text.Equals(""))
+                estado = false;
+            return estado;
+        }
+        public void LimpiarNuevoParqueo()
+        {
+            mtb_CedulaJuridica.Text = "";
+            txt_NombreParqueo.Text = "";
+            mtb_Provincia.Text = "";
+            txt_Canton.Text = "";
+            txt_Distrito.Text = "";
+            txt_Calle.Text = "";
+            txt_DetalleParqueo.Text = "";
+        }
+
+        private void btn_GuardarParqueo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ValidarNuevoParqueo())
+                {
+                    entPar._SCedJuParqueo = mtb_CedulaJuridica.Text;
+                    entPar._SNombre = txt_NombreParqueo.Text;
+                    entPar._SProvincia = mtb_Provincia.Text;
+                    entPar._SCanton = txt_Canton.Text;
+                    entPar._SDistrito = txt_Distrito.Text;
+                    entPar._SCalle = txt_Calle.Text;
+                    entPar._SDetalle = txt_DetalleParqueo.Text;
+
+                    if (negPar.NuevoParqueo(entPar))
+                    {
+                        dataGridConsultarParqueo.DataSource = negPar.consultarPark();
+                        MessageBox.Show("Se ha ingresado correctamente", "Nuevo el Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarNuevoParqueo();
+                    }
+                    else
+                        MessageBox.Show("No se ha ingresado correctamente", "Nuevo Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar toda la información solicitada!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("se ha producido un error " + ex.Message, "Nuevo Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
     }
 }

@@ -10,7 +10,7 @@ using Entidades.Entidades;
 
 namespace Datos.DatosUsuario
 {
-    class cl_dat_Parqueo
+    public class cl_dat_Parqueo
     {
         SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["Valor"].ConnectionString);
 
@@ -33,6 +33,15 @@ namespace Datos.DatosUsuario
             Conextion.Close();
 
             return true;
+        }
+
+        public DataTable consutlarParqueo()
+        {
+            SqlCommand comando = new SqlCommand("ConsularParqueo", Conextion);
+            SqlDataAdapter data = new SqlDataAdapter(comando);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+            return tabla;
         }
     }
 }
