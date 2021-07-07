@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Entidades.Entidades;
 
 namespace Datos.DatosUsuario
-{//hola
+{
     public class cl_dat_Parqueo
     {
         SqlConnection Conextion = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
