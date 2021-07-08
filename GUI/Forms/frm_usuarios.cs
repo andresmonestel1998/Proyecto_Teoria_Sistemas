@@ -20,6 +20,12 @@ namespace GUI.Forms
             if (tipoUser.Equals("Invitado"))
             {
                 tbControlUsuarios.TabPages.Remove(tabCancelar);
+                tbControlUsuarios.TabPages.Remove(tabAparcarCliente);
+                tbControlUsuarios.TabPages.Remove(tabReservar);
+            }
+            else
+            {
+                tbControlUsuarios.TabPages.Remove(tabAparcarInvitado);
             }
         }
 

@@ -29,7 +29,6 @@ namespace GUI.Forms
             {
                 InitializeComponent();
                 this.Text = "Bienvenido: " + nombre;
-                txtIdRol.Text = negRol.cargarIDRol();
                 CargarCMB();
             }
             public void CargarCMB()
@@ -41,9 +40,14 @@ namespace GUI.Forms
                 cmRolEditar.DataSource = negRol.cargarComboBox();
                 cmRolEditar.DisplayMember = "v_nombreRol";
                 cmRolEditar.ValueMember = "v_idRol";
-            }
+
+                cmbCargarParqueos.DataSource = negPar.consultarPark();
+                cmbCargarParqueos.DisplayMember = "v_nombre";
+                cmbCargarParqueos.ValueMember = "v_CedulaJuridicaParqueo";
+             }
         #endregion
 
+        #region Salir
         private void EmpleadosTab_Click(object sender, EventArgs e)
         {
             if (EmpleadosTab.SelectedTab == tabCerrarSesion)
@@ -56,7 +60,9 @@ namespace GUI.Forms
                 }
             }
         }
+        #endregion
 
+        #region modUsuarios
         private void btnConsultarNuevoUsuario_Click(object sender, EventArgs e)
         {
             try
@@ -68,7 +74,7 @@ namespace GUI.Forms
                 MessageBox.Show("Se ha producido un error." + ex.Message);
             }
         }
-        public Boolean ValidarCamposNuevo()
+        public Boolean ValidarCamposNuevoUsuario()
         {
             bool estado = true;
             if (txtCedNuevo.Text.Equals(" -    -") ||
@@ -92,14 +98,14 @@ namespace GUI.Forms
         {
             try
             {
-                if (ValidarCamposNuevo())
+                if (ValidarCamposNuevoUsuario())
                 {
-                    entUser._SCedulaUsuario=txtCedNuevo.Text;
-                    entUser._SNombre=txtNomNuevo.Text;
+                    entUser._SCedulaUsuario = txtCedNuevo.Text;
+                    entUser._SNombre = txtNomNuevo.Text;
                     entUser._STelefono = txtTelNuevo.Text;
-                    entUser._SCorreo= txtEmailNuevo.Text;
-                    entUser._SContrasena= txtContraNuevo.Text;
-                    entUser._IIdRol=Convert.ToInt32(cmbRolNuevo.SelectedValue);
+                    entUser._SCorreo = txtEmailNuevo.Text;
+                    entUser._SContrasena = txtContraNuevo.Text;
+                    entUser._IIdRol = Convert.ToInt32(cmbRolNuevo.SelectedValue);
 
                     if (negUser.NuevoUser(entUser))
                     {
@@ -121,59 +127,44 @@ namespace GUI.Forms
             }
 
         }
-
         private void btnLimpiarNuevoUsuario_Click(object sender, EventArgs e)
         {
             LimpiarNuevoUser();
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void btnBuscarEspecifica_Click(object sender, EventArgs e)
+        public DataTable buscaCliente(String cedula)
         {
             DataTable taTempo = new DataTable();
             try
             {
-                taTempo = negUser.BuscarUser(txtCeduBuscar.Text.ToString());
-                if (taTempo != null)
-                    dataGridBuscar.DataSource = taTempo;
-                else
+                taTempo = negUser.BuscarUser(cedula);
+                if (taTempo == null)
                     MessageBox.Show("No se han encontrado resultado ", "Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Se ha producido un error, " + ex.Message);
             }
+            return taTempo;
         }
-
+        private void btnBuscarEspecifica_Click(object sender, EventArgs e)
+        {
+            dataGridBuscarCliente.DataSource= buscaCliente(txtCeduBuscar.Text);
+        }
         private void btnModificarUsuario_Click(object sender, EventArgs e)
         {
-            if (dataGridBuscar.DataSource != null)
+            if (dataGridBuscarCliente.DataSource != null)
             {
                 try
                 {
                     SubEmpleados.SelectedIndex = 2;
-                    txtNomEditar.Text = dataGridBuscar.CurrentRow.Cells[1].Value.ToString();
-                    txtCedEditar.Text = dataGridBuscar.CurrentRow.Cells[0].Value.ToString();
-                    txtEmailEditar.Text = dataGridBuscar.CurrentRow.Cells[2].Value.ToString();
-                    txtTelEditar.Text = dataGridBuscar.CurrentRow.Cells[3].Value.ToString();
-                    txtContraEditar.Text = dataGridBuscar.CurrentRow.Cells[4].Value.ToString();
-                    cmRolEditar.Text = dataGridBuscar.CurrentRow.Cells[5].Value.ToString();
+                    txtNomEditar.Text = dataGridBuscarCliente.CurrentRow.Cells[1].Value.ToString();
+                    txtCedEditar.Text = dataGridBuscarCliente.CurrentRow.Cells[0].Value.ToString();
+                    txtEmailEditar.Text = dataGridBuscarCliente.CurrentRow.Cells[2].Value.ToString();
+                    txtTelEditar.Text = dataGridBuscarCliente.CurrentRow.Cells[3].Value.ToString();
+                    txtContraEditar.Text = dataGridBuscarCliente.CurrentRow.Cells[4].Value.ToString();
+                    cmRolEditar.Text = dataGridBuscarCliente.CurrentRow.Cells[5].Value.ToString();
                     btnModificaUsuario.Enabled = true;
-                    dataGridBuscar.DataSource = null;
+                    dataGridBuscarCliente.DataSource = null;
                 }
                 catch (Exception ex)
                 {
@@ -184,8 +175,7 @@ namespace GUI.Forms
                 MessageBox.Show("Aún no hay información cargada", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
-
-        public Boolean ValidarCamposEditar()
+        public Boolean ValidarCamposEditarUsuario()
         {
             bool estado = true;
             if (txtCedEditar.Text.Equals(" -    -") ||
@@ -206,7 +196,7 @@ namespace GUI.Forms
         }
         private void btnModificaUsuario_Click(object sender, EventArgs e)
         {
-            if (ValidarCamposEditar())
+            if (ValidarCamposEditarUsuario())
             {
                 try
                 {
@@ -240,21 +230,28 @@ namespace GUI.Forms
                 MessageBox.Show("Debe ingresar toda la información solicitada!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void btnLimpiarEditarUsuario_Click(object sender, EventArgs e)
         {
             LimpiarEditarUsuarios();
         }
+        #endregion
+
+        #region modRolres
+
+        #endregion
+
+        #region modParqueo
         public Boolean ValidarNuevoParqueo()
         {
             bool estado = true;
-            if (mtb_CedulaJuridica.Text.Equals(" -    -") ||
+            if (mtb_CedulaJuridica.Text.Equals(" -   -") ||
             txt_NombreParqueo.Text.Equals("") ||
-            mtb_Provincia.Text.Equals(" -    -") ||
+            mtb_Provincia.Text.Equals("") ||
             txt_Canton.Text.Equals("") ||
             txt_Distrito.Text.Equals("") ||
+            txtCamposDisponiblesParqueo.Text.Equals("")||
             txt_Calle.Text.Equals("") ||
-            txt_DetalleParqueo.Text.Equals(""))
+            txtTelParuqeo.Text.Equals("    -"))
                 estado = false;
             return estado;
         }
@@ -266,7 +263,8 @@ namespace GUI.Forms
             txt_Canton.Text = "";
             txt_Distrito.Text = "";
             txt_Calle.Text = "";
-            txt_DetalleParqueo.Text = "";
+            txtTelParuqeo.Text = "";
+            txtCamposDisponiblesParqueo.Text = "";
         }
 
         private void btn_GuardarParqueo_Click(object sender, EventArgs e)
@@ -281,7 +279,8 @@ namespace GUI.Forms
                     entPar._SCanton = txt_Canton.Text;
                     entPar._SDistrito = txt_Distrito.Text;
                     entPar._SCalle = txt_Calle.Text;
-                    entPar._SDetalle = txt_DetalleParqueo.Text;
+                    entPar._STelefono = txtTelParuqeo.Text;
+                    entPar._ICamposDisponibles = Convert.ToInt32( txtCamposDisponiblesParqueo.Text);
 
                     if (negPar.NuevoParqueo(entPar))
                     {
@@ -303,6 +302,180 @@ namespace GUI.Forms
             }
         }
 
-       
+        private void btnBuscaParqueo_Click(object sender, EventArgs e)
+        {
+            DataTable taTempo = new DataTable();
+            try
+            {
+                taTempo = negPar.BuscarParqueo(txtCedBuscarParqueo.Text.ToString());
+                if (taTempo != null)
+                    dataGridBuscaParqueo.DataSource = taTempo;
+                else
+                    MessageBox.Show("No se han encontrado resultado ", "Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error, " + ex.Message);
+            }
+        }
+
+        private void btnModificarParqueo_Click(object sender, EventArgs e)
+        {
+            if (dataGridBuscaParqueo.DataSource != null)
+            {
+                try
+                {
+                    tabSubParqueo.SelectedIndex = 7;
+                    txtEditParqueoCedula.Text = dataGridBuscaParqueo.CurrentRow.Cells[0].Value.ToString();
+                    txtEditParqueoNombre.Text = dataGridBuscaParqueo.CurrentRow.Cells[1].Value.ToString();
+                    txtEditParqueoProvincia.Text = dataGridBuscaParqueo.CurrentRow.Cells[2].Value.ToString();
+                    txtEditParqueoCanton.Text = dataGridBuscaParqueo.CurrentRow.Cells[3].Value.ToString();
+                    txtEditParqueoDistrito.Text = dataGridBuscaParqueo.CurrentRow.Cells[4].Value.ToString();
+                    txtEditParqueoCalle.Text = dataGridBuscaParqueo.CurrentRow.Cells[5].Value.ToString();
+                    txtEditParqueoTelefono.Text = dataGridBuscaParqueo.CurrentRow.Cells[6].Value.ToString();
+                    txtCamposDispEditarParqueo.Text = dataGridBuscaParqueo.CurrentRow.Cells[7].Value.ToString();
+                    btnModificaUsuario.Enabled = true;
+                    dataGridBuscaParqueo.DataSource = null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ha ocurrido un error " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+                MessageBox.Show("Aún no hay información cargada", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+        public Boolean ValidarCamposEditarParqueo()
+        {
+            bool estado = true;
+            if (txtEditParqueoCedula.Text.Equals(" -   -") ||
+            txtEditParqueoNombre.Text.Equals("") ||
+            txtEditParqueoProvincia.Text.Equals("") ||
+            txtEditParqueoCanton.Text.Equals("") ||
+            txtEditParqueoDistrito.Text.Equals("") ||
+            txtCamposDispEditarParqueo.Text.Equals("") ||
+            txtEditParqueoCalle.Text.Equals("") ||
+            txtEditParqueoTelefono.Text.Equals("    -"))
+                estado = false;
+            return estado;
+        }
+        public void LimpiarCamposEditarParqueo()
+        {
+            txtEditParqueoNombre.Text = "";
+            txtEditParqueoProvincia.Text = "";
+            txtEditParqueoCanton.Text = "";
+            txtEditParqueoDistrito.Text = "";
+            txtEditParqueoCalle.Text = "";
+            txtEditParqueoTelefono.Text = "";
+            txtCamposDispEditarParqueo.Text = "";
+        }
+
+        private void btnModificaParqueo_Click(object sender, EventArgs e)
+        {
+            if (ValidarCamposEditarParqueo())
+            {
+                try
+                {
+                    entPar._SCedJuParqueo = txtEditParqueoCedula.Text;
+                    entPar._SNombre = txtEditParqueoNombre.Text;
+                    entPar._SProvincia = txtEditParqueoProvincia.Text;
+                    entPar._SCanton = txtEditParqueoCanton.Text;
+                    entPar._SDistrito = txtEditParqueoDistrito.Text;
+                    entPar._SCalle = txtEditParqueoCalle.Text;
+                    entPar._STelefono = txtEditParqueoTelefono.Text;
+                    entPar._ICamposDisponibles = Convert.ToInt32(txtCamposDispEditarParqueo.Text);
+
+
+                    if (negPar.EditarParqueo(entPar))
+                    {
+                        dataGridEditaParqueo.DataSource = negPar.BuscarParqueo(txtEditParqueoCedula.Text);
+                        MessageBox.Show("Se ha modificado correctamente", "Editar parqueo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCamposEditarParqueo();
+                        txtEditParqueoCedula.Text = "";
+                        btnModificaParqueo.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("No se ha modificado correctamente", "Editar parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se ha producido un error " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar toda la información solicitada!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void btnConsultarParqueos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridConsultarParqueo.DataSource = negPar.consultarPark();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error." + ex.Message);
+            }
+        }
+
+        private void rdbTipoUsuarioCliente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbTipoUsuarioCliente.Checked)
+            {
+                gBoxClientes.Enabled = true;
+                gBoxInvitados.Enabled = false;
+            }
+            else
+            {
+                gBoxClientes.Enabled = false;
+                gBoxInvitados.Enabled = true;
+            }
+        }
+
+        private void btnBuscaClienteGuardaVehiculo_Click(object sender, EventArgs e)
+        {
+            DataTable cliente = new DataTable();
+            cliente = buscaCliente(txtCedBuscaGuardaVehiculo.Text);
+            if (cliente != null)
+            {
+                foreach (DataRow row in cliente.Rows)
+                {
+                    //Rol administrador
+                    if (row["Rol"].ToString().Equals("Administrador"))
+                        MessageBox.Show("No se puede agregar un administrador");
+                    else
+                    {
+                        txtGuardaVehiculoNombre.Text = row["v_nombreCompleto"].ToString();
+                    
+                    }
+                }
+            }
+        }
+
+        private void cmbCargarParqueos_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DataTable taTempo = new DataTable();
+            try
+            {
+                taTempo = negPar.BuscarParqueo(cmbCargarParqueos.SelectedValue.ToString());
+                if (taTempo != null)
+                {
+                    foreach (DataRow row in taTempo.Rows)
+                    {
+                        lbCantidadDisponible.Text = row["v_CantidadCampos"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error, " + ex.Message);
+            }
+        }
+        #endregion
+
+
     }
 }
