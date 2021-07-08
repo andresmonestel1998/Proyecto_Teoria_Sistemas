@@ -28,6 +28,7 @@ namespace Datos.DatosUsuario
             Comando.Parameters.Add("@Distrito", SqlDbType.NVarChar).Value = parqueo._SDistrito;
             Comando.Parameters.Add("@Calle", SqlDbType.NVarChar).Value = parqueo._SCalle;
             Comando.Parameters.Add("@telefono", SqlDbType.NVarChar).Value = parqueo._STelefono;
+            Comando.Parameters.Add("@cantidadCampos", SqlDbType.Int).Value = parqueo._ICamposDisponibles;
 
             Comando.CommandType = CommandType.StoredProcedure;
 
@@ -83,6 +84,7 @@ namespace Datos.DatosUsuario
             Comando.Parameters.Add("@Distrito", SqlDbType.NVarChar).Value = parqueo._SDistrito;
             Comando.Parameters.Add("@Calle", SqlDbType.NVarChar).Value = parqueo._SCalle;
             Comando.Parameters.Add("@telefono", SqlDbType.NVarChar).Value = parqueo._STelefono;
+            Comando.Parameters.Add("@cantidadCampos", SqlDbType.Int).Value = parqueo._ICamposDisponibles;
 
             Comando.CommandType = CommandType.StoredProcedure;
 

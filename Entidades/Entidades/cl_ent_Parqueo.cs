@@ -11,6 +11,7 @@ namespace Entidades.Entidades
 
         #region variables
             private string _sCedJuParqueo, _sNombre, _sProvincia, _sCanton, _sDistrito, _sCalle, _sTelefono;
+        private int _iCamposDisponibles;
         #endregion
 
         #region constructores
@@ -21,6 +22,7 @@ namespace Entidades.Entidades
             public string _SDistrito { get => _sDistrito; set => _sDistrito = value; }
             public string _SCalle { get => _sCalle; set => _sCalle = value; }
             public string _STelefono { get => _sTelefono; set => _sTelefono = value; }
+            public int _ICamposDisponibles { get => _iCamposDisponibles; set => _iCamposDisponibles = value; }
         #endregion
     }
 }
