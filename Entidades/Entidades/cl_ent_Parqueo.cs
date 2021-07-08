@@ -10,7 +10,7 @@ namespace Entidades.Entidades
     {
 
         #region variables
-            private string _sCedJuParqueo, _sNombre, _sProvincia, _sCanton, _sDistrito, _sCalle, _sDetalle;
+            private string _sCedJuParqueo, _sNombre, _sProvincia, _sCanton, _sDistrito, _sCalle, _sTelefono;
         #endregion
 
         #region constructores
@@ -20,7 +20,7 @@ namespace Entidades.Entidades
             public string _SCanton { get => _sCanton; set => _sCanton = value; }
             public string _SDistrito { get => _sDistrito; set => _sDistrito = value; }
             public string _SCalle { get => _sCalle; set => _sCalle = value; }
-            public string _SDetalle { get => _sDetalle; set => _sDetalle = value; }
+            public string _STelefono { get => _sTelefono; set => _sTelefono = value; }
         #endregion
     }
 }

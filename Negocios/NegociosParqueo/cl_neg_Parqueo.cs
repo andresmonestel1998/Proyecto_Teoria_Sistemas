@@ -18,8 +18,18 @@ namespace Negocios.NegociosParqueo
         }
         public Boolean NuevoParqueo(cl_ent_Parqueo parqueo)
         {
-            
             return DatPa.InsertarParqueo(parqueo);
         }
+
+        public DataTable BuscarParqueo(String cedula)
+        {
+            return DatPa.BuscarParqueo(cedula);
+        }
+
+        public Boolean EditarParqueo(cl_ent_Parqueo parqueo)
+        {
+            return DatPa.EditarParqueo(parqueo);
+        }
+
     }
 }

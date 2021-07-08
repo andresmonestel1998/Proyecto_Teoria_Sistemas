@@ -111,18 +111,18 @@ namespace GUI.Forms
             this.label35 = new System.Windows.Forms.Label();
             this.dataGridEditarCliente = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabSubParqueo = new System.Windows.Forms.TabControl();
             this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConsultarParqueos = new System.Windows.Forms.Button();
             this.dataGridConsultarParqueo = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_GuardarParqueo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTelParuqeo = new System.Windows.Forms.MaskedTextBox();
             this.txt_Calle = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.txt_DetalleParqueo = new System.Windows.Forms.TextBox();
             this.txt_Distrito = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.mtb_Provincia = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -134,11 +134,44 @@ namespace GUI.Forms
             this.label24 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.btnEnviarEditarParqueo = new System.Windows.Forms.Button();
+            this.btnBuscaParqueo = new System.Windows.Forms.Button();
+            this.btnLimpiarBusquedaParqueo = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCedBuscarParqueo = new System.Windows.Forms.MaskedTextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.dataGridBuscaParqueo = new System.Windows.Forms.DataGridView();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridEditaParqueo = new System.Windows.Forms.DataGridView();
+            this.btnLimpiarModificar = new System.Windows.Forms.Button();
+            this.btnModificaParqueo = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txtEditParqueoTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtEditParqueoCalle = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtEditParqueoDistrito = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtEditParqueoProvincia = new System.Windows.Forms.MaskedTextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtEditParqueoCedula = new System.Windows.Forms.MaskedTextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtEditParqueoCanton = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtEditParqueoNombre = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabCerrarSesion = new System.Windows.Forms.TabPage();
+            this.txtCamposDisponiblesParqueo = new System.Windows.Forms.MaskedTextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
             this.EmpleadosTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SubEmpleados.SuspendLayout();
@@ -163,10 +196,16 @@ namespace GUI.Forms
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEditarCliente)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabSubParqueo.SuspendLayout();
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultarParqueo)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabPage13.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscaParqueo)).BeginInit();
+            this.tabPage14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEditaParqueo)).BeginInit();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmpleadosTab
@@ -179,7 +218,7 @@ namespace GUI.Forms
             this.EmpleadosTab.Location = new System.Drawing.Point(0, 0);
             this.EmpleadosTab.Name = "EmpleadosTab";
             this.EmpleadosTab.SelectedIndex = 0;
-            this.EmpleadosTab.Size = new System.Drawing.Size(1304, 661);
+            this.EmpleadosTab.Size = new System.Drawing.Size(1552, 751);
             this.EmpleadosTab.TabIndex = 1;
             this.EmpleadosTab.Click += new System.EventHandler(this.EmpleadosTab_Click);
             // 
@@ -189,7 +228,7 @@ namespace GUI.Forms
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1296, 632);
+            this.tabPage1.Size = new System.Drawing.Size(1544, 722);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gestionar Usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -203,7 +242,7 @@ namespace GUI.Forms
             this.SubEmpleados.Location = new System.Drawing.Point(3, 3);
             this.SubEmpleados.Name = "SubEmpleados";
             this.SubEmpleados.SelectedIndex = 0;
-            this.SubEmpleados.Size = new System.Drawing.Size(1290, 626);
+            this.SubEmpleados.Size = new System.Drawing.Size(1538, 716);
             this.SubEmpleados.TabIndex = 0;
             // 
             // tabPage7
@@ -217,7 +256,7 @@ namespace GUI.Forms
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1282, 597);
+            this.tabPage7.Size = new System.Drawing.Size(1530, 687);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "Nuevo Usuario";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -406,7 +445,7 @@ namespace GUI.Forms
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1282, 597);
+            this.tabPage8.Size = new System.Drawing.Size(1530, 687);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Búsqueda Especifica";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -498,7 +537,7 @@ namespace GUI.Forms
             this.frmEmpleadoEditar.Controls.Add(this.label23);
             this.frmEmpleadoEditar.Location = new System.Drawing.Point(4, 25);
             this.frmEmpleadoEditar.Name = "frmEmpleadoEditar";
-            this.frmEmpleadoEditar.Size = new System.Drawing.Size(1282, 597);
+            this.frmEmpleadoEditar.Size = new System.Drawing.Size(1530, 687);
             this.frmEmpleadoEditar.TabIndex = 2;
             this.frmEmpleadoEditar.Text = "Editar Usuario";
             this.frmEmpleadoEditar.UseVisualStyleBackColor = true;
@@ -673,7 +712,7 @@ namespace GUI.Forms
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1296, 632);
+            this.tabPage2.Size = new System.Drawing.Size(1544, 722);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gestionar Roles";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -687,7 +726,7 @@ namespace GUI.Forms
             this.tabClientes.Location = new System.Drawing.Point(3, 3);
             this.tabClientes.Name = "tabClientes";
             this.tabClientes.SelectedIndex = 0;
-            this.tabClientes.Size = new System.Drawing.Size(1290, 626);
+            this.tabClientes.Size = new System.Drawing.Size(1538, 716);
             this.tabClientes.TabIndex = 1;
             // 
             // tabPage9
@@ -701,7 +740,7 @@ namespace GUI.Forms
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1282, 597);
+            this.tabPage9.Size = new System.Drawing.Size(1530, 687);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Nuevo Rol";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -811,7 +850,7 @@ namespace GUI.Forms
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1282, 597);
+            this.tabPage10.Size = new System.Drawing.Size(1530, 687);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Búsqueda Especifica";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -901,7 +940,7 @@ namespace GUI.Forms
             this.tabPage11.Controls.Add(this.dataGridEditarCliente);
             this.tabPage11.Location = new System.Drawing.Point(4, 25);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1282, 597);
+            this.tabPage11.Size = new System.Drawing.Size(1530, 687);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Editar Rol";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -993,32 +1032,33 @@ namespace GUI.Forms
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.tabControl1);
+            this.tabPage3.Controls.Add(this.tabSubParqueo);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1296, 632);
+            this.tabPage3.Size = new System.Drawing.Size(1544, 722);
             this.tabPage3.TabIndex = 5;
             this.tabPage3.Text = "Gestionar Parqueo";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // tabSubParqueo
             // 
-            this.tabControl1.Controls.Add(this.tabPage12);
-            this.tabControl1.Controls.Add(this.tabPage13);
-            this.tabControl1.Controls.Add(this.tabPage14);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1296, 632);
-            this.tabControl1.TabIndex = 0;
+            this.tabSubParqueo.Controls.Add(this.tabPage6);
+            this.tabSubParqueo.Controls.Add(this.tabPage4);
+            this.tabSubParqueo.Controls.Add(this.tabPage5);
+            this.tabSubParqueo.Controls.Add(this.tabPage15);
+            this.tabSubParqueo.Controls.Add(this.tabPage12);
+            this.tabSubParqueo.Controls.Add(this.tabPage13);
+            this.tabSubParqueo.Controls.Add(this.tabPage14);
+            this.tabSubParqueo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabSubParqueo.Location = new System.Drawing.Point(0, 0);
+            this.tabSubParqueo.Name = "tabSubParqueo";
+            this.tabSubParqueo.SelectedIndex = 0;
+            this.tabSubParqueo.Size = new System.Drawing.Size(1544, 722);
+            this.tabSubParqueo.TabIndex = 0;
             // 
             // tabPage12
             // 
-            this.tabPage12.Controls.Add(this.button1);
+            this.tabPage12.Controls.Add(this.btnConsultarParqueos);
             this.tabPage12.Controls.Add(this.dataGridConsultarParqueo);
             this.tabPage12.Controls.Add(this.button2);
             this.tabPage12.Controls.Add(this.btn_GuardarParqueo);
@@ -1026,30 +1066,31 @@ namespace GUI.Forms
             this.tabPage12.Controls.Add(this.label26);
             this.tabPage12.Location = new System.Drawing.Point(4, 25);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(1288, 603);
+            this.tabPage12.Size = new System.Drawing.Size(1536, 693);
             this.tabPage12.TabIndex = 3;
             this.tabPage12.Text = "Agregar Parqueo";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnConsultarParqueos
             // 
-            this.button1.Location = new System.Drawing.Point(531, 498);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 34);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Consultar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConsultarParqueos.Location = new System.Drawing.Point(531, 498);
+            this.btnConsultarParqueos.Name = "btnConsultarParqueos";
+            this.btnConsultarParqueos.Size = new System.Drawing.Size(110, 34);
+            this.btnConsultarParqueos.TabIndex = 34;
+            this.btnConsultarParqueos.Text = "Consultar";
+            this.btnConsultarParqueos.UseVisualStyleBackColor = true;
+            this.btnConsultarParqueos.Click += new System.EventHandler(this.btnConsultarParqueos_Click);
             // 
             // dataGridConsultarParqueo
             // 
             this.dataGridConsultarParqueo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridConsultarParqueo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridConsultarParqueo.Location = new System.Drawing.Point(540, 45);
+            this.dataGridConsultarParqueo.Location = new System.Drawing.Point(554, 46);
             this.dataGridConsultarParqueo.Name = "dataGridConsultarParqueo";
             this.dataGridConsultarParqueo.ReadOnly = true;
             this.dataGridConsultarParqueo.RowHeadersWidth = 51;
             this.dataGridConsultarParqueo.RowTemplate.Height = 24;
-            this.dataGridConsultarParqueo.Size = new System.Drawing.Size(847, 424);
+            this.dataGridConsultarParqueo.Size = new System.Drawing.Size(947, 424);
             this.dataGridConsultarParqueo.TabIndex = 37;
             // 
             // button2
@@ -1073,11 +1114,13 @@ namespace GUI.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCamposDisponiblesParqueo);
+            this.groupBox1.Controls.Add(this.label42);
+            this.groupBox1.Controls.Add(this.txtTelParuqeo);
             this.groupBox1.Controls.Add(this.txt_Calle);
             this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Controls.Add(this.txt_DetalleParqueo);
             this.groupBox1.Controls.Add(this.txt_Distrito);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.tel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.mtb_Provincia);
             this.groupBox1.Controls.Add(this.label5);
@@ -1089,14 +1132,22 @@ namespace GUI.Forms
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Location = new System.Drawing.Point(33, 96);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(473, 463);
+            this.groupBox1.Size = new System.Drawing.Size(473, 450);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parqueo";
             // 
+            // txtTelParuqeo
+            // 
+            this.txtTelParuqeo.Location = new System.Drawing.Point(106, 188);
+            this.txtTelParuqeo.Mask = "9999-9999";
+            this.txtTelParuqeo.Name = "txtTelParuqeo";
+            this.txtTelParuqeo.Size = new System.Drawing.Size(100, 22);
+            this.txtTelParuqeo.TabIndex = 18;
+            // 
             // txt_Calle
             // 
-            this.txt_Calle.Location = new System.Drawing.Point(106, 304);
+            this.txt_Calle.Location = new System.Drawing.Point(106, 390);
             this.txt_Calle.Name = "txt_Calle";
             this.txt_Calle.Size = new System.Drawing.Size(205, 22);
             this.txt_Calle.TabIndex = 17;
@@ -1104,36 +1155,27 @@ namespace GUI.Forms
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(25, 309);
+            this.label27.Location = new System.Drawing.Point(25, 395);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(39, 17);
             this.label27.TabIndex = 16;
             this.label27.Text = "Calle";
             // 
-            // txt_DetalleParqueo
-            // 
-            this.txt_DetalleParqueo.AllowDrop = true;
-            this.txt_DetalleParqueo.Location = new System.Drawing.Point(106, 351);
-            this.txt_DetalleParqueo.Multiline = true;
-            this.txt_DetalleParqueo.Name = "txt_DetalleParqueo";
-            this.txt_DetalleParqueo.Size = new System.Drawing.Size(223, 76);
-            this.txt_DetalleParqueo.TabIndex = 15;
-            // 
             // txt_Distrito
             // 
-            this.txt_Distrito.Location = new System.Drawing.Point(106, 252);
+            this.txt_Distrito.Location = new System.Drawing.Point(106, 338);
             this.txt_Distrito.Name = "txt_Distrito";
             this.txt_Distrito.Size = new System.Drawing.Size(205, 22);
             this.txt_Distrito.TabIndex = 5;
             // 
-            // label3
+            // tel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 351);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Detalles:";
+            this.tel.AutoSize = true;
+            this.tel.Location = new System.Drawing.Point(25, 188);
+            this.tel.Name = "tel";
+            this.tel.Size = new System.Drawing.Size(68, 17);
+            this.tel.TabIndex = 14;
+            this.tel.Text = "Teléfono:";
             // 
             // label4
             // 
@@ -1146,7 +1188,7 @@ namespace GUI.Forms
             // 
             // mtb_Provincia
             // 
-            this.mtb_Provincia.Location = new System.Drawing.Point(106, 146);
+            this.mtb_Provincia.Location = new System.Drawing.Point(106, 232);
             this.mtb_Provincia.Name = "mtb_Provincia";
             this.mtb_Provincia.Size = new System.Drawing.Size(100, 22);
             this.mtb_Provincia.TabIndex = 3;
@@ -1171,7 +1213,7 @@ namespace GUI.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 149);
+            this.label6.Location = new System.Drawing.Point(25, 235);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 17);
             this.label6.TabIndex = 4;
@@ -1179,7 +1221,7 @@ namespace GUI.Forms
             // 
             // txt_Canton
             // 
-            this.txt_Canton.Location = new System.Drawing.Point(106, 200);
+            this.txt_Canton.Location = new System.Drawing.Point(106, 286);
             this.txt_Canton.Name = "txt_Canton";
             this.txt_Canton.Size = new System.Drawing.Size(205, 22);
             this.txt_Canton.TabIndex = 4;
@@ -1187,7 +1229,7 @@ namespace GUI.Forms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 200);
+            this.label7.Location = new System.Drawing.Point(25, 286);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 17);
             this.label7.TabIndex = 5;
@@ -1203,7 +1245,7 @@ namespace GUI.Forms
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(25, 257);
+            this.label24.Location = new System.Drawing.Point(25, 343);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(56, 17);
             this.label24.TabIndex = 6;
@@ -1221,28 +1263,308 @@ namespace GUI.Forms
             // 
             // tabPage13
             // 
+            this.tabPage13.Controls.Add(this.btnEnviarEditarParqueo);
+            this.tabPage13.Controls.Add(this.btnBuscaParqueo);
+            this.tabPage13.Controls.Add(this.btnLimpiarBusquedaParqueo);
+            this.tabPage13.Controls.Add(this.groupBox7);
+            this.tabPage13.Controls.Add(this.label29);
+            this.tabPage13.Controls.Add(this.dataGridBuscaParqueo);
             this.tabPage13.Location = new System.Drawing.Point(4, 25);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1288, 603);
+            this.tabPage13.Size = new System.Drawing.Size(1536, 693);
             this.tabPage13.TabIndex = 4;
             this.tabPage13.Text = "Buscar Parqueo";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
+            // btnEnviarEditarParqueo
+            // 
+            this.btnEnviarEditarParqueo.Location = new System.Drawing.Point(164, 281);
+            this.btnEnviarEditarParqueo.Name = "btnEnviarEditarParqueo";
+            this.btnEnviarEditarParqueo.Size = new System.Drawing.Size(90, 34);
+            this.btnEnviarEditarParqueo.TabIndex = 39;
+            this.btnEnviarEditarParqueo.Text = "Modificar";
+            this.btnEnviarEditarParqueo.UseVisualStyleBackColor = true;
+            this.btnEnviarEditarParqueo.Click += new System.EventHandler(this.btnModificarParqueo_Click);
+            // 
+            // btnBuscaParqueo
+            // 
+            this.btnBuscaParqueo.Location = new System.Drawing.Point(48, 281);
+            this.btnBuscaParqueo.Name = "btnBuscaParqueo";
+            this.btnBuscaParqueo.Size = new System.Drawing.Size(99, 34);
+            this.btnBuscaParqueo.TabIndex = 38;
+            this.btnBuscaParqueo.Text = "Buscar";
+            this.btnBuscaParqueo.UseVisualStyleBackColor = true;
+            this.btnBuscaParqueo.Click += new System.EventHandler(this.btnBuscaParqueo_Click);
+            // 
+            // btnLimpiarBusquedaParqueo
+            // 
+            this.btnLimpiarBusquedaParqueo.Location = new System.Drawing.Point(281, 281);
+            this.btnLimpiarBusquedaParqueo.Name = "btnLimpiarBusquedaParqueo";
+            this.btnLimpiarBusquedaParqueo.Size = new System.Drawing.Size(90, 34);
+            this.btnLimpiarBusquedaParqueo.TabIndex = 40;
+            this.btnLimpiarBusquedaParqueo.Text = "Limpiar";
+            this.btnLimpiarBusquedaParqueo.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label3);
+            this.groupBox7.Controls.Add(this.txtCedBuscarParqueo);
+            this.groupBox7.Location = new System.Drawing.Point(34, 88);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(437, 136);
+            this.groupBox7.TabIndex = 43;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Parqueos";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(34, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Cédula Jurídica:";
+            // 
+            // txtCedBuscarParqueo
+            // 
+            this.txtCedBuscarParqueo.Location = new System.Drawing.Point(149, 60);
+            this.txtCedBuscarParqueo.Mask = "9-999-99999";
+            this.txtCedBuscarParqueo.Name = "txtCedBuscarParqueo";
+            this.txtCedBuscarParqueo.Size = new System.Drawing.Size(100, 22);
+            this.txtCedBuscarParqueo.TabIndex = 1;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(171, 37);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(194, 25);
+            this.label29.TabIndex = 42;
+            this.label29.Text = "Búsqueda parqueo";
+            // 
+            // dataGridBuscaParqueo
+            // 
+            this.dataGridBuscaParqueo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridBuscaParqueo.Location = new System.Drawing.Point(540, 37);
+            this.dataGridBuscaParqueo.Name = "dataGridBuscaParqueo";
+            this.dataGridBuscaParqueo.ReadOnly = true;
+            this.dataGridBuscaParqueo.RowHeadersWidth = 51;
+            this.dataGridBuscaParqueo.RowTemplate.Height = 24;
+            this.dataGridBuscaParqueo.Size = new System.Drawing.Size(856, 424);
+            this.dataGridBuscaParqueo.TabIndex = 41;
+            // 
             // tabPage14
             // 
+            this.tabPage14.Controls.Add(this.button3);
+            this.tabPage14.Controls.Add(this.dataGridEditaParqueo);
+            this.tabPage14.Controls.Add(this.btnLimpiarModificar);
+            this.tabPage14.Controls.Add(this.btnModificaParqueo);
+            this.tabPage14.Controls.Add(this.groupBox8);
+            this.tabPage14.Controls.Add(this.label41);
             this.tabPage14.Location = new System.Drawing.Point(4, 25);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(1288, 603);
+            this.tabPage14.Size = new System.Drawing.Size(1536, 693);
             this.tabPage14.TabIndex = 5;
             this.tabPage14.Text = "Editar Parqueo";
             this.tabPage14.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(539, 495);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(110, 34);
+            this.button3.TabIndex = 40;
+            this.button3.Text = "Consultar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridEditaParqueo
+            // 
+            this.dataGridEditaParqueo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridEditaParqueo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridEditaParqueo.Location = new System.Drawing.Point(562, 43);
+            this.dataGridEditaParqueo.Name = "dataGridEditaParqueo";
+            this.dataGridEditaParqueo.ReadOnly = true;
+            this.dataGridEditaParqueo.RowHeadersWidth = 51;
+            this.dataGridEditaParqueo.RowTemplate.Height = 24;
+            this.dataGridEditaParqueo.Size = new System.Drawing.Size(798, 424);
+            this.dataGridEditaParqueo.TabIndex = 43;
+            // 
+            // btnLimpiarModificar
+            // 
+            this.btnLimpiarModificar.Location = new System.Drawing.Point(173, 562);
+            this.btnLimpiarModificar.Name = "btnLimpiarModificar";
+            this.btnLimpiarModificar.Size = new System.Drawing.Size(90, 34);
+            this.btnLimpiarModificar.TabIndex = 39;
+            this.btnLimpiarModificar.Text = "Limpiar";
+            this.btnLimpiarModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificaParqueo
+            // 
+            this.btnModificaParqueo.Location = new System.Drawing.Point(54, 562);
+            this.btnModificaParqueo.Name = "btnModificaParqueo";
+            this.btnModificaParqueo.Size = new System.Drawing.Size(103, 34);
+            this.btnModificaParqueo.TabIndex = 38;
+            this.btnModificaParqueo.Text = "Modificar";
+            this.btnModificaParqueo.UseVisualStyleBackColor = true;
+            this.btnModificaParqueo.Click += new System.EventHandler(this.btnModificaParqueo_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.maskedTextBox1);
+            this.groupBox8.Controls.Add(this.label43);
+            this.groupBox8.Controls.Add(this.txtEditParqueoTelefono);
+            this.groupBox8.Controls.Add(this.txtEditParqueoCalle);
+            this.groupBox8.Controls.Add(this.label33);
+            this.groupBox8.Controls.Add(this.txtEditParqueoDistrito);
+            this.groupBox8.Controls.Add(this.label34);
+            this.groupBox8.Controls.Add(this.label36);
+            this.groupBox8.Controls.Add(this.txtEditParqueoProvincia);
+            this.groupBox8.Controls.Add(this.label37);
+            this.groupBox8.Controls.Add(this.txtEditParqueoCedula);
+            this.groupBox8.Controls.Add(this.label38);
+            this.groupBox8.Controls.Add(this.txtEditParqueoCanton);
+            this.groupBox8.Controls.Add(this.label39);
+            this.groupBox8.Controls.Add(this.txtEditParqueoNombre);
+            this.groupBox8.Controls.Add(this.label40);
+            this.groupBox8.Location = new System.Drawing.Point(41, 93);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(473, 448);
+            this.groupBox8.TabIndex = 42;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Parqueo";
+            // 
+            // txtEditParqueoTelefono
+            // 
+            this.txtEditParqueoTelefono.Location = new System.Drawing.Point(106, 183);
+            this.txtEditParqueoTelefono.Mask = "9999-9999";
+            this.txtEditParqueoTelefono.Name = "txtEditParqueoTelefono";
+            this.txtEditParqueoTelefono.Size = new System.Drawing.Size(100, 22);
+            this.txtEditParqueoTelefono.TabIndex = 18;
+            // 
+            // txtEditParqueoCalle
+            // 
+            this.txtEditParqueoCalle.Location = new System.Drawing.Point(106, 385);
+            this.txtEditParqueoCalle.Name = "txtEditParqueoCalle";
+            this.txtEditParqueoCalle.Size = new System.Drawing.Size(205, 22);
+            this.txtEditParqueoCalle.TabIndex = 17;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(25, 390);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(39, 17);
+            this.label33.TabIndex = 16;
+            this.label33.Text = "Calle";
+            // 
+            // txtEditParqueoDistrito
+            // 
+            this.txtEditParqueoDistrito.Location = new System.Drawing.Point(106, 333);
+            this.txtEditParqueoDistrito.Name = "txtEditParqueoDistrito";
+            this.txtEditParqueoDistrito.Size = new System.Drawing.Size(205, 22);
+            this.txtEditParqueoDistrito.TabIndex = 5;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(25, 183);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(68, 17);
+            this.label34.TabIndex = 14;
+            this.label34.Text = "Teléfono:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(25, 46);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(62, 17);
+            this.label36.TabIndex = 2;
+            this.label36.Text = "Nombre:";
+            // 
+            // txtEditParqueoProvincia
+            // 
+            this.txtEditParqueoProvincia.Location = new System.Drawing.Point(106, 227);
+            this.txtEditParqueoProvincia.Name = "txtEditParqueoProvincia";
+            this.txtEditParqueoProvincia.Size = new System.Drawing.Size(100, 22);
+            this.txtEditParqueoProvincia.TabIndex = 3;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(25, 95);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(109, 17);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "Cédula Juridica:";
+            // 
+            // txtEditParqueoCedula
+            // 
+            this.txtEditParqueoCedula.Enabled = false;
+            this.txtEditParqueoCedula.Location = new System.Drawing.Point(172, 90);
+            this.txtEditParqueoCedula.Mask = "9-999-99999";
+            this.txtEditParqueoCedula.Name = "txtEditParqueoCedula";
+            this.txtEditParqueoCedula.Size = new System.Drawing.Size(100, 22);
+            this.txtEditParqueoCedula.TabIndex = 2;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(25, 230);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(70, 17);
+            this.label38.TabIndex = 4;
+            this.label38.Text = "Provincia:";
+            // 
+            // txtEditParqueoCanton
+            // 
+            this.txtEditParqueoCanton.Location = new System.Drawing.Point(106, 281);
+            this.txtEditParqueoCanton.Name = "txtEditParqueoCanton";
+            this.txtEditParqueoCanton.Size = new System.Drawing.Size(205, 22);
+            this.txtEditParqueoCanton.TabIndex = 4;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(25, 281);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(57, 17);
+            this.label39.TabIndex = 5;
+            this.label39.Text = "Cantón:";
+            // 
+            // txtEditParqueoNombre
+            // 
+            this.txtEditParqueoNombre.Location = new System.Drawing.Point(172, 43);
+            this.txtEditParqueoNombre.Name = "txtEditParqueoNombre";
+            this.txtEditParqueoNombre.Size = new System.Drawing.Size(281, 22);
+            this.txtEditParqueoNombre.TabIndex = 1;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(25, 338);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(56, 17);
+            this.label40.TabIndex = 6;
+            this.label40.Text = "Distrito:";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(180, 43);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(155, 25);
+            this.label41.TabIndex = 41;
+            this.label41.Text = "Editar Parqueo";
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1288, 603);
+            this.tabPage4.Size = new System.Drawing.Size(1536, 693);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Reservar Campos";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1252,7 +1574,7 @@ namespace GUI.Forms
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1288, 603);
+            this.tabPage5.Size = new System.Drawing.Size(1536, 693);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Cancelar reservaciones";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1261,9 +1583,9 @@ namespace GUI.Forms
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1288, 603);
+            this.tabPage6.Size = new System.Drawing.Size(1536, 693);
             this.tabPage6.TabIndex = 2;
-            this.tabPage6.Text = "mas";
+            this.tabPage6.Text = "Guardar Vehículo";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // tabCerrarSesion
@@ -1271,16 +1593,59 @@ namespace GUI.Forms
             this.tabCerrarSesion.Location = new System.Drawing.Point(4, 25);
             this.tabCerrarSesion.Name = "tabCerrarSesion";
             this.tabCerrarSesion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCerrarSesion.Size = new System.Drawing.Size(1296, 632);
+            this.tabCerrarSesion.Size = new System.Drawing.Size(1544, 722);
             this.tabCerrarSesion.TabIndex = 4;
             this.tabCerrarSesion.Text = "Cerrar sesión";
             this.tabCerrarSesion.UseVisualStyleBackColor = true;
+            // 
+            // txtCamposDisponiblesParqueo
+            // 
+            this.txtCamposDisponiblesParqueo.Location = new System.Drawing.Point(249, 136);
+            this.txtCamposDisponiblesParqueo.Mask = "999";
+            this.txtCamposDisponiblesParqueo.Name = "txtCamposDisponiblesParqueo";
+            this.txtCamposDisponiblesParqueo.Size = new System.Drawing.Size(69, 22);
+            this.txtCamposDisponiblesParqueo.TabIndex = 20;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(27, 139);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(216, 17);
+            this.label42.TabIndex = 19;
+            this.label42.Text = "Cantidad de campos disponibles:";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(247, 137);
+            this.maskedTextBox1.Mask = "999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(69, 22);
+            this.maskedTextBox1.TabIndex = 22;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(25, 140);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(216, 17);
+            this.label43.TabIndex = 21;
+            this.label43.Text = "Cantidad de campos disponibles:";
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Location = new System.Drawing.Point(4, 25);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Size = new System.Drawing.Size(1536, 693);
+            this.tabPage15.TabIndex = 6;
+            this.tabPage15.Text = "Mostrar estado del parqueo";
+            this.tabPage15.UseVisualStyleBackColor = true;
             // 
             // frm_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 661);
+            this.ClientSize = new System.Drawing.Size(1552, 751);
             this.Controls.Add(this.EmpleadosTab);
             this.Name = "frm_administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1322,12 +1687,22 @@ namespace GUI.Forms
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEditarCliente)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tabSubParqueo.ResumeLayout(false);
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultarParqueo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage13.ResumeLayout(false);
+            this.tabPage13.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscaParqueo)).EndInit();
+            this.tabPage14.ResumeLayout(false);
+            this.tabPage14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEditaParqueo)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1415,20 +1790,20 @@ namespace GUI.Forms
         private System.Windows.Forms.DataGridView dataGridEditarCliente;
         private System.Windows.Forms.TabPage tabCerrarSesion;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabSubParqueo;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConsultarParqueos;
         private System.Windows.Forms.DataGridView dataGridConsultarParqueo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_GuardarParqueo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_Distrito;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label tel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox mtb_Provincia;
         private System.Windows.Forms.Label label5;
@@ -1441,8 +1816,41 @@ namespace GUI.Forms
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.TabPage tabPage14;
-        private System.Windows.Forms.TextBox txt_DetalleParqueo;
         private System.Windows.Forms.TextBox txt_Calle;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.MaskedTextBox txtTelParuqeo;
+        private System.Windows.Forms.Button btnEnviarEditarParqueo;
+        private System.Windows.Forms.Button btnBuscaParqueo;
+        private System.Windows.Forms.Button btnLimpiarBusquedaParqueo;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox txtCedBuscarParqueo;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.DataGridView dataGridBuscaParqueo;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridEditaParqueo;
+        private System.Windows.Forms.Button btnLimpiarModificar;
+        private System.Windows.Forms.Button btnModificaParqueo;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.MaskedTextBox txtEditParqueoTelefono;
+        private System.Windows.Forms.TextBox txtEditParqueoCalle;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtEditParqueoDistrito;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.MaskedTextBox txtEditParqueoProvincia;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.MaskedTextBox txtEditParqueoCedula;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txtEditParqueoCanton;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtEditParqueoNombre;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.MaskedTextBox txtCamposDisponiblesParqueo;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TabPage tabPage15;
     }
 }
