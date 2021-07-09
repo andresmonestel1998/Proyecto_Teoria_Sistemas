@@ -251,7 +251,7 @@ namespace GUI.Forms
             txt_Distrito.Text.Equals("") ||
             txtCamposDisponiblesParqueo.Text.Equals("")||
             txt_Calle.Text.Equals("") ||
-            txtTelParuqeo.Text.Equals("    -"))
+            txtTelParqueo.Text.Equals("    -"))
                 estado = false;
             return estado;
         }
@@ -263,7 +263,7 @@ namespace GUI.Forms
             txt_Canton.Text = "";
             txt_Distrito.Text = "";
             txt_Calle.Text = "";
-            txtTelParuqeo.Text = "";
+            txtTelParqueo.Text = "";
             txtCamposDisponiblesParqueo.Text = "";
         }
 
@@ -279,7 +279,7 @@ namespace GUI.Forms
                     entPar._SCanton = txt_Canton.Text;
                     entPar._SDistrito = txt_Distrito.Text;
                     entPar._SCalle = txt_Calle.Text;
-                    entPar._STelefono = txtTelParuqeo.Text;
+                    entPar._STelefono = txtTelParqueo.Text;
                     entPar._ICamposDisponibles = Convert.ToInt32( txtCamposDisponiblesParqueo.Text);
 
                     if (negPar.NuevoParqueo(entPar))
@@ -474,8 +474,64 @@ namespace GUI.Forms
                 MessageBox.Show("Se ha producido un error, " + ex.Message);
             }
         }
+
+
         #endregion
 
+        private void btn_LimpiarParqueo_Click(object sender, EventArgs e)
+        {
+            txt_NombreParqueo.Text = "";
+            mtb_CedulaJuridica.Text = "";
+            txtCamposDisponiblesParqueo.Text = "";
+            txtTelParqueo.Text = "";
+            mtb_Provincia.Text = "";
+            txt_Canton.Text = "";
+            txt_Distrito.Text = "";
+            txt_Calle.Text = "";
+        }
 
+        private void btnLimpiarBusquedaParqueo_Click(object sender, EventArgs e)
+        {
+            txtCedBuscarParqueo.Text = "";
+        }
+
+        private void btnLimpiarModificar_Click(object sender, EventArgs e)
+        {
+            txtEditParqueoNombre.Text = "";
+            txtEditParqueoProvincia.Text = "";
+            txtEditParqueoCanton.Text = "";
+            txtEditParqueoDistrito.Text = "";
+            txtEditParqueoCalle.Text = "";
+            txtEditParqueoTelefono.Text = "";
+            txtCamposDispEditarParqueo.Text = "";
+        }
+
+        private void btn_ConsultarParqueoModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridEditaParqueo.DataSource = negPar.consultarPark();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error." + ex.Message);
+            }
+        }
+
+        private void dataGridEditaParqueo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int n = e.RowIndex;
+            if (n != -1)
+            {
+                txtEditParqueoNombre.Text = dataGridEditaParqueo.Rows[n].Cells[1].Value.ToString();
+                txtEditParqueoCedula.Text = dataGridEditaParqueo.Rows[n].Cells[0].Value.ToString();
+                txtCamposDispEditarParqueo.Text = dataGridEditaParqueo.Rows[n].Cells[7].Value.ToString();
+                txtEditParqueoTelefono.Text = dataGridEditaParqueo.Rows[n].Cells[6].Value.ToString();
+                txtEditParqueoProvincia.Text = dataGridEditaParqueo.Rows[n].Cells[2].Value.ToString();
+                txtEditParqueoCanton.Text = dataGridEditaParqueo.Rows[n].Cells[3].Value.ToString();
+                txtEditParqueoDistrito.Text = dataGridEditaParqueo.Rows[n].Cells[4].Value.ToString();
+                txtEditParqueoCalle.Text = dataGridEditaParqueo.Rows[n].Cells[5].Value.ToString();
+            }
+        }
     }
 }
