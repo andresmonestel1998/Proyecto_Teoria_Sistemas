@@ -49,15 +49,15 @@ namespace GUI.Forms
                         openAdmin.Show();
                         this.Hide();
                     }
-                    else if(tablaUsuarios.Rows[0][0].ToString().Equals("Invitado"))
+                    else if (tablaUsuarios.Rows[0][0].ToString().Equals("Invitado"))
                     {
-                        frm_usuarios openUser = new frm_usuarios(tablaUsuarios.Rows[0][1].ToString(), tablaUsuarios.Rows[0][0].ToString());
+                        frm_usuarios openUser = new frm_usuarios(tablaUsuarios.Rows[0][1].ToString(), tablaUsuarios.Rows[0][0].ToString(), tablaUsuarios.Rows[0][2].ToString());
                         openUser.Show();
                         this.Hide();
                     }
                     else if(tablaUsuarios.Rows[0][0].ToString().Equals("Cliente"))
                     {
-                        frm_usuarios openUser = new frm_usuarios(tablaUsuarios.Rows[0][1].ToString(), tablaUsuarios.Rows[0][0].ToString());
+                        frm_usuarios openUser = new frm_usuarios(tablaUsuarios.Rows[0][1].ToString(), tablaUsuarios.Rows[0][0].ToString(), tablaUsuarios.Rows[0][2].ToString());
                         openUser.Show();
                         this.Hide();
                     }
@@ -83,7 +83,7 @@ namespace GUI.Forms
 
         private void lk_Invitado_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frm_usuarios usuario = new frm_usuarios("Invitado", "Invitado");
+            frm_usuarios usuario = new frm_usuarios("Invitado", "Invitado","Invitado");
             usuario.Show();
             this.Hide();
         }

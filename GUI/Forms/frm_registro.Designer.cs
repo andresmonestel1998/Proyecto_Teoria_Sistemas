@@ -102,6 +102,7 @@ namespace GUI.Forms
             this.btnLimpiarNuevoUsuario.TabIndex = 33;
             this.btnLimpiarNuevoUsuario.Text = "Limpiar";
             this.btnLimpiarNuevoUsuario.UseVisualStyleBackColor = true;
+            this.btnLimpiarNuevoUsuario.Click += new System.EventHandler(this.btnLimpiarNuevoUsuario_Click);
             // 
             // btnGuardarNuevoUsuario
             // 

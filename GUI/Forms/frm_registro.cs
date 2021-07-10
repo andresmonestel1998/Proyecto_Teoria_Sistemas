@@ -93,5 +93,14 @@ namespace GUI.Forms
             }
 
         }
+
+        private void btnLimpiarNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            txtNomNuevo.Text = "";
+            txtCedNuevo.Text = "";
+            txtTelNuevo.Text = "";
+            txtEmailNuevo.Text = "";
+            txtContraNuevo.Text = "";
+        }
     }
 }

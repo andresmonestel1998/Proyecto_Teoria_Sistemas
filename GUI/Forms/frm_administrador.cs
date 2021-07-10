@@ -478,6 +478,7 @@ namespace GUI.Forms
 
         #endregion
 
+        #region  LimpiarParqueo
         private void btn_LimpiarParqueo_Click(object sender, EventArgs e)
         {
             txt_NombreParqueo.Text = "";
@@ -489,12 +490,16 @@ namespace GUI.Forms
             txt_Distrito.Text = "";
             txt_Calle.Text = "";
         }
+        #endregion
 
+        #region LimpiarBusquedaParqueo
         private void btnLimpiarBusquedaParqueo_Click(object sender, EventArgs e)
         {
             txtCedBuscarParqueo.Text = "";
         }
+        #endregion
 
+        #region LimpiarModificarParqueo
         private void btnLimpiarModificar_Click(object sender, EventArgs e)
         {
             txtEditParqueoNombre.Text = "";
@@ -505,7 +510,9 @@ namespace GUI.Forms
             txtEditParqueoTelefono.Text = "";
             txtCamposDispEditarParqueo.Text = "";
         }
+        #endregion
 
+        #region ConsularParqueoModificar
         private void btn_ConsultarParqueoModificar_Click(object sender, EventArgs e)
         {
             try
@@ -517,7 +524,9 @@ namespace GUI.Forms
                 MessageBox.Show("Se ha producido un error." + ex.Message);
             }
         }
+        #endregion
 
+        #region EditarParqueoGridView
         private void dataGridEditaParqueo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int n = e.RowIndex;
@@ -533,5 +542,41 @@ namespace GUI.Forms
                 txtEditParqueoCalle.Text = dataGridEditaParqueo.Rows[n].Cells[5].Value.ToString();
             }
         }
+        #endregion
+
+        #region LimpiarBusquedaUsuario
+        private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
+        {
+            txtCeduBuscar.Text = "";
+        }
+        #endregion
+
+        #region LimpiarVehiculoCliente
+        private void btnLimpiarVehiculoCliente_Click(object sender, EventArgs e)
+        {
+            txtCedBuscaGuardaVehiculo.Text = "";
+            txtGuardaVehiculoNombre.Text = "";
+            txtGuardaVehiculoCorreo.Text = "";
+            txtGuardaVehiculoTelefono.Text = "";
+            txtGuardaVehiculoPlaca.Text = "";
+            txtGuardaVehiculoMarca.Text = "";
+            txtGuardaVehiculoModelo.Text = "";
+        }
+        #endregion
+
+        #region LimpiarVehiculoInvitado
+        private void btnLimpiarVehiculoInvitado_Click(object sender, EventArgs e)
+        {
+            txtCedInvitadoGuardaVehiculo.Text = "";
+            txtInvitadoVehiculoNombre.Text = "";
+            txtInvitadoVehiculoCorreo.Text = "";
+            txtInvitadoVehiculoTelefono.Text = "";
+            txtInvitadoVehiculoPlaca.Text = "";
+            txtInvitadoVehiculoMarca.Text = "";
+            txtInvitadoVehiculoModelo.Text = "";
+        }
+        #endregion
+
+        
     }
 }
