@@ -24,7 +24,8 @@ namespace GUI.Forms
         {
             InitializeComponent();
             txtCedulaCliente.Text = cedula;
-            CargarDatosCliente();
+            if(tipoUser != "Invitado")
+            { CargarDatosCliente(); }
             cmbCargarParqueoCliente.DataSource = negPar.consultarPark();
             cmbCargarParqueoCliente.DisplayMember = "v_nombre";
             cmbCargarParqueoCliente.ValueMember = "v_CedulaJuridicaParqueo";
