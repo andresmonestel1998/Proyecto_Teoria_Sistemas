@@ -41,10 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\cl_ent_Campo.cs" />
+    <Compile Include="Entidades\cl_ent_aparcar.cs" />
     <Compile Include="Entidades\cl_ent_Parqueo.cs" />
     <Compile Include="Entidades\cl_ent_Reservacion.cs" />
-    <Compile Include="Entidades\cl_ent_TipoCampo.cs" />
     <Compile Include="Entidades\cl_ent_Rol.cs" />
     <Compile Include="Entidades\cl_ent_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

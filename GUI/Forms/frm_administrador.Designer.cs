@@ -29,6 +29,7 @@ namespace GUI.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.EmpleadosTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.SubEmpleados = new System.Windows.Forms.TabControl();
@@ -112,7 +113,6 @@ namespace GUI.Forms
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.gBoxClientes = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtGuardaVehiculoModelo = new System.Windows.Forms.TextBox();
             this.txtGuardaVehiculoMarca = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
@@ -194,6 +194,10 @@ namespace GUI.Forms
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.tabCerrarSesion = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lbHoraIngresa = new System.Windows.Forms.Label();
+            this.lbFechaIngresa = new System.Windows.Forms.Label();
+            this.TimerHoraIngresa = new System.Windows.Forms.Timer(this.components);
             this.EmpleadosTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SubEmpleados.SuspendLayout();
@@ -1061,7 +1065,9 @@ namespace GUI.Forms
             // 
             // gBoxClientes
             // 
-            this.gBoxClientes.Controls.Add(this.dateTimePicker1);
+            this.gBoxClientes.Controls.Add(this.lbFechaIngresa);
+            this.gBoxClientes.Controls.Add(this.lbHoraIngresa);
+            this.gBoxClientes.Controls.Add(this.label25);
             this.gBoxClientes.Controls.Add(this.txtGuardaVehiculoModelo);
             this.gBoxClientes.Controls.Add(this.txtGuardaVehiculoMarca);
             this.gBoxClientes.Controls.Add(this.label59);
@@ -1090,15 +1096,6 @@ namespace GUI.Forms
             this.gBoxClientes.TabIndex = 0;
             this.gBoxClientes.TabStop = false;
             this.gBoxClientes.Text = "Clientes";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "HH:mm:ss tt";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(187, 511);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(175, 28);
-            this.dateTimePicker1.TabIndex = 24;
             // 
             // txtGuardaVehiculoModelo
             // 
@@ -1213,7 +1210,7 @@ namespace GUI.Forms
             this.txtGuardaVehiculoTelefono.Enabled = false;
             this.txtGuardaVehiculoTelefono.Location = new System.Drawing.Point(176, 201);
             this.txtGuardaVehiculoTelefono.Name = "txtGuardaVehiculoTelefono";
-            this.txtGuardaVehiculoTelefono.Size = new System.Drawing.Size(311, 28);
+            this.txtGuardaVehiculoTelefono.Size = new System.Drawing.Size(174, 28);
             this.txtGuardaVehiculoTelefono.TabIndex = 9;
             // 
             // txtGuardaVehiculoCorreo
@@ -1876,6 +1873,38 @@ namespace GUI.Forms
             this.tabCerrarSesion.Text = "Cerrar sesión";
             this.tabCerrarSesion.UseVisualStyleBackColor = true;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(19, 585);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(123, 24);
+            this.label25.TabIndex = 24;
+            this.label25.Text = "Hora Ingresa:";
+            // 
+            // lbHoraIngresa
+            // 
+            this.lbHoraIngresa.AutoSize = true;
+            this.lbHoraIngresa.Location = new System.Drawing.Point(184, 585);
+            this.lbHoraIngresa.Name = "lbHoraIngresa";
+            this.lbHoraIngresa.Size = new System.Drawing.Size(24, 24);
+            this.lbHoraIngresa.TabIndex = 25;
+            this.lbHoraIngresa.Text = "H";
+            // 
+            // lbFechaIngresa
+            // 
+            this.lbFechaIngresa.AutoSize = true;
+            this.lbFechaIngresa.Location = new System.Drawing.Point(184, 510);
+            this.lbFechaIngresa.Name = "lbFechaIngresa";
+            this.lbFechaIngresa.Size = new System.Drawing.Size(24, 24);
+            this.lbFechaIngresa.TabIndex = 26;
+            this.lbFechaIngresa.Text = "H";
+            // 
+            // TimerHoraIngresa
+            // 
+            this.TimerHoraIngresa.Enabled = true;
+            this.TimerHoraIngresa.Tick += new System.EventHandler(this.TimerHoraIngresa_Tick);
+            // 
             // frm_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2089,7 +2118,6 @@ namespace GUI.Forms
         private System.Windows.Forms.TextBox txtInvitadoVehiculoMarca;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtGuardaVehiculoModelo;
         private System.Windows.Forms.TextBox txtGuardaVehiculoMarca;
         private System.Windows.Forms.Label label59;
@@ -2101,5 +2129,9 @@ namespace GUI.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lbCantidadDisponible;
+        private System.Windows.Forms.Label lbFechaIngresa;
+        private System.Windows.Forms.Label lbHoraIngresa;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Timer TimerHoraIngresa;
     }
 }

@@ -44,6 +44,8 @@ namespace GUI.Forms
                 cmbCargarParqueos.DataSource = negPar.consultarPark();
                 cmbCargarParqueos.DisplayMember = "v_nombre";
                 cmbCargarParqueos.ValueMember = "v_CedulaJuridicaParqueo";
+
+                
              }
         #endregion
 
@@ -449,7 +451,8 @@ namespace GUI.Forms
                     else
                     {
                         txtGuardaVehiculoNombre.Text = row["v_nombreCompleto"].ToString();
-                    
+                        txtGuardaVehiculoCorreo.Text = row["v_correo"].ToString();
+                        txtGuardaVehiculoTelefono.Text = row["v_telefono"].ToString();
                     }
                 }
             }
@@ -575,8 +578,13 @@ namespace GUI.Forms
             txtInvitadoVehiculoMarca.Text = "";
             txtInvitadoVehiculoModelo.Text = "";
         }
+
         #endregion
 
-        
+        private void TimerHoraIngresa_Tick(object sender, EventArgs e)
+        {
+            lbFechaIngresa.Text = Convert.ToString(DateTime.Now.ToString("ddd, dd MMM yyy"));
+            lbHoraIngresa.Text = Convert.ToString(DateTime.Now.ToString("hh:mm:ss tt"));
+        }
     }
 }
