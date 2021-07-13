@@ -586,5 +586,10 @@ namespace GUI.Forms
             lbFechaIngresa.Text = Convert.ToString(DateTime.Now.ToString("ddd, dd MMM yyy"));
             lbHoraIngresa.Text = Convert.ToString(DateTime.Now.ToString("hh:mm:ss tt"));
         }
+
+        private void btnAparcarVehiculo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

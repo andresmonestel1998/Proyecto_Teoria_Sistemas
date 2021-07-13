@@ -113,18 +113,21 @@ namespace GUI.Forms
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.gBoxClientes = new System.Windows.Forms.GroupBox();
+            this.lbFechaIngresa = new System.Windows.Forms.Label();
+            this.lbHoraIngresa = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.txtGuardaVehiculoModelo = new System.Windows.Forms.TextBox();
             this.txtGuardaVehiculoMarca = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.txtGuardaVehiculoPlaca = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbTipoCarro = new System.Windows.Forms.RadioButton();
+            this.rbTipoMoto = new System.Windows.Forms.RadioButton();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.btnLimpiarVehiculoCliente = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAparcarVehiculo = new System.Windows.Forms.Button();
             this.txtGuardaVehiculoTelefono = new System.Windows.Forms.TextBox();
             this.txtGuardaVehiculoCorreo = new System.Windows.Forms.TextBox();
             this.txtGuardaVehiculoNombre = new System.Windows.Forms.TextBox();
@@ -194,9 +197,6 @@ namespace GUI.Forms
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.tabCerrarSesion = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lbHoraIngresa = new System.Windows.Forms.Label();
-            this.lbFechaIngresa = new System.Windows.Forms.Label();
             this.TimerHoraIngresa = new System.Windows.Forms.Timer(this.components);
             this.EmpleadosTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1074,12 +1074,12 @@ namespace GUI.Forms
             this.gBoxClientes.Controls.Add(this.label58);
             this.gBoxClientes.Controls.Add(this.label50);
             this.gBoxClientes.Controls.Add(this.txtGuardaVehiculoPlaca);
-            this.gBoxClientes.Controls.Add(this.radioButton2);
-            this.gBoxClientes.Controls.Add(this.radioButton1);
+            this.gBoxClientes.Controls.Add(this.rbTipoCarro);
+            this.gBoxClientes.Controls.Add(this.rbTipoMoto);
             this.gBoxClientes.Controls.Add(this.label48);
             this.gBoxClientes.Controls.Add(this.label49);
             this.gBoxClientes.Controls.Add(this.btnLimpiarVehiculoCliente);
-            this.gBoxClientes.Controls.Add(this.button4);
+            this.gBoxClientes.Controls.Add(this.btnAparcarVehiculo);
             this.gBoxClientes.Controls.Add(this.txtGuardaVehiculoTelefono);
             this.gBoxClientes.Controls.Add(this.txtGuardaVehiculoCorreo);
             this.gBoxClientes.Controls.Add(this.txtGuardaVehiculoNombre);
@@ -1096,6 +1096,33 @@ namespace GUI.Forms
             this.gBoxClientes.TabIndex = 0;
             this.gBoxClientes.TabStop = false;
             this.gBoxClientes.Text = "Clientes";
+            // 
+            // lbFechaIngresa
+            // 
+            this.lbFechaIngresa.AutoSize = true;
+            this.lbFechaIngresa.Location = new System.Drawing.Point(184, 510);
+            this.lbFechaIngresa.Name = "lbFechaIngresa";
+            this.lbFechaIngresa.Size = new System.Drawing.Size(24, 24);
+            this.lbFechaIngresa.TabIndex = 26;
+            this.lbFechaIngresa.Text = "H";
+            // 
+            // lbHoraIngresa
+            // 
+            this.lbHoraIngresa.AutoSize = true;
+            this.lbHoraIngresa.Location = new System.Drawing.Point(184, 585);
+            this.lbHoraIngresa.Name = "lbHoraIngresa";
+            this.lbHoraIngresa.Size = new System.Drawing.Size(24, 24);
+            this.lbHoraIngresa.TabIndex = 25;
+            this.lbHoraIngresa.Text = "H";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(19, 585);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(123, 24);
+            this.label25.TabIndex = 24;
+            this.label25.Text = "Hora Ingresa:";
             // 
             // txtGuardaVehiculoModelo
             // 
@@ -1146,27 +1173,27 @@ namespace GUI.Forms
             this.txtGuardaVehiculoPlaca.Size = new System.Drawing.Size(105, 28);
             this.txtGuardaVehiculoPlaca.TabIndex = 18;
             // 
-            // radioButton2
+            // rbTipoCarro
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(230, 255);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(77, 28);
-            this.radioButton2.TabIndex = 17;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Carro";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbTipoCarro.AutoSize = true;
+            this.rbTipoCarro.Checked = true;
+            this.rbTipoCarro.Location = new System.Drawing.Point(230, 255);
+            this.rbTipoCarro.Name = "rbTipoCarro";
+            this.rbTipoCarro.Size = new System.Drawing.Size(77, 28);
+            this.rbTipoCarro.TabIndex = 17;
+            this.rbTipoCarro.TabStop = true;
+            this.rbTipoCarro.Text = "Carro";
+            this.rbTipoCarro.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbTipoMoto
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(361, 256);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(126, 28);
-            this.radioButton1.TabIndex = 16;
-            this.radioButton1.Text = "Motocicleta";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbTipoMoto.AutoSize = true;
+            this.rbTipoMoto.Location = new System.Drawing.Point(361, 256);
+            this.rbTipoMoto.Name = "rbTipoMoto";
+            this.rbTipoMoto.Size = new System.Drawing.Size(126, 28);
+            this.rbTipoMoto.TabIndex = 16;
+            this.rbTipoMoto.Text = "Motocicleta";
+            this.rbTipoMoto.UseVisualStyleBackColor = true;
             // 
             // label48
             // 
@@ -1196,14 +1223,15 @@ namespace GUI.Forms
             this.btnLimpiarVehiculoCliente.UseVisualStyleBackColor = true;
             this.btnLimpiarVehiculoCliente.Click += new System.EventHandler(this.btnLimpiarVehiculoCliente_Click);
             // 
-            // button4
+            // btnAparcarVehiculo
             // 
-            this.button4.Location = new System.Drawing.Point(332, 658);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(167, 49);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Aparcar vehículo";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAparcarVehiculo.Location = new System.Drawing.Point(332, 658);
+            this.btnAparcarVehiculo.Name = "btnAparcarVehiculo";
+            this.btnAparcarVehiculo.Size = new System.Drawing.Size(167, 49);
+            this.btnAparcarVehiculo.TabIndex = 10;
+            this.btnAparcarVehiculo.Text = "Aparcar vehículo";
+            this.btnAparcarVehiculo.UseVisualStyleBackColor = true;
+            this.btnAparcarVehiculo.Click += new System.EventHandler(this.btnAparcarVehiculo_Click);
             // 
             // txtGuardaVehiculoTelefono
             // 
@@ -1873,33 +1901,6 @@ namespace GUI.Forms
             this.tabCerrarSesion.Text = "Cerrar sesión";
             this.tabCerrarSesion.UseVisualStyleBackColor = true;
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(19, 585);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(123, 24);
-            this.label25.TabIndex = 24;
-            this.label25.Text = "Hora Ingresa:";
-            // 
-            // lbHoraIngresa
-            // 
-            this.lbHoraIngresa.AutoSize = true;
-            this.lbHoraIngresa.Location = new System.Drawing.Point(184, 585);
-            this.lbHoraIngresa.Name = "lbHoraIngresa";
-            this.lbHoraIngresa.Size = new System.Drawing.Size(24, 24);
-            this.lbHoraIngresa.TabIndex = 25;
-            this.lbHoraIngresa.Text = "H";
-            // 
-            // lbFechaIngresa
-            // 
-            this.lbFechaIngresa.AutoSize = true;
-            this.lbFechaIngresa.Location = new System.Drawing.Point(184, 510);
-            this.lbFechaIngresa.Name = "lbFechaIngresa";
-            this.lbFechaIngresa.Size = new System.Drawing.Size(24, 24);
-            this.lbFechaIngresa.TabIndex = 26;
-            this.lbFechaIngresa.Text = "H";
-            // 
             // TimerHoraIngresa
             // 
             this.TimerHoraIngresa.Enabled = true;
@@ -2079,12 +2080,12 @@ namespace GUI.Forms
         private System.Windows.Forms.GroupBox gBoxClientes;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox txtGuardaVehiculoPlaca;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbTipoCarro;
+        private System.Windows.Forms.RadioButton rbTipoMoto;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Button btnLimpiarVehiculoCliente;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAparcarVehiculo;
         private System.Windows.Forms.TextBox txtGuardaVehiculoTelefono;
         private System.Windows.Forms.TextBox txtGuardaVehiculoCorreo;
         private System.Windows.Forms.TextBox txtGuardaVehiculoNombre;
