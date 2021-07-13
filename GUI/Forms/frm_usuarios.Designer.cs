@@ -351,6 +351,7 @@ namespace GUI.Forms
             this.btn_AparcarCliente.TabIndex = 10;
             this.btn_AparcarCliente.Text = "Aparcar vehículo";
             this.btn_AparcarCliente.UseVisualStyleBackColor = true;
+            this.btn_AparcarCliente.Click += new System.EventHandler(this.btn_AparcarCliente_Click);
             // 
             // txtTelefonoCliente
             // 

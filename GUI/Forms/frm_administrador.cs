@@ -52,7 +52,9 @@ namespace GUI.Forms
                 cmbInformeParqueo.DisplayMember = "v_nombre";
                 cmbInformeParqueo.ValueMember = "v_CedulaJuridicaParqueo";
 
-
+                cmbParqueoParaRetirarCarro.DataSource = negPar.consultarPark();
+                cmbParqueoParaRetirarCarro.DisplayMember = "v_nombre";
+                cmbParqueoParaRetirarCarro.ValueMember = "v_CedulaJuridicaParqueo";
         }
         #endregion
 
@@ -592,6 +594,7 @@ namespace GUI.Forms
         {
             lbFechaIngresa.Text = Convert.ToString(DateTime.Now.ToString("ddd, dd MMM yyy"));
             lbHoraIngresa.Text = Convert.ToString(DateTime.Now.ToString("hh:mm:ss tt"));
+            lbFechaSaleRetiraVehiculo.Text = Convert.ToString(DateTime.Now);
         }
 
         private void btnAparcarVehiculo_Click(object sender, EventArgs e)
@@ -658,12 +661,124 @@ namespace GUI.Forms
 
         private void btnBuscarPlacaRetiraVehiculo_Click(object sender, EventArgs e)
         {
+            CargaVehiculosEnParqueo();
+        }
+
+        public void CargaVehiculosEnParqueo()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                entApar._SCedJuParqueo = cmbParqueoParaRetirarCarro.SelectedValue.ToString();
+                entApar._SPlacaVehiculo = txtPlacaRetiraVehiculo.Text;
+                if (rdTipoRetiraCarro.Checked)
+                    entApar._STipoVehiculo = "Carro";
+                else
+                    entApar._STipoVehiculo = "Moto";
+                entApar._BEstadVehiculo = true;
+
+                dt = negApar.BuscarCarroSalirParqueo(entApar);
+                if (dt != null)
+                {
+                    try
+                    {
+                        foreach(DataRow row in dt.Rows)
+                        {
+                            txtMarcaRetiraVehiculo.Text = row["v_marca"].ToString();
+                            txtModeloRetiraVehiculo.Text = row["v_modelo"].ToString();
+                            txtNombreClienteRetira.Text = row["v_nombreCompleto"].ToString(); 
+                            txtCedClienteRetira.Text = row["v_CedulaUsuario"].ToString(); 
+                            txtCorreoClienteRetira.Text = row["v_correo"].ToString(); 
+                            txtTelefonoClienteRetira.Text = row["v_telefono"].ToString(); 
+                            lbFechaIngresaRetiraVehiculo.Text = row["v_FechaHoraEntrada"].ToString();
+                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ha ocurrido un error " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                    MessageBox.Show("Esta placa no se encuentra en el parqueo activa", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error", "Ingreso Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cmbParqueoParaRetirarCarro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridvehiculosActivos.DataSource = null;
+            try
+            {
+                entApar._SCedJuParqueo = cmbParqueoParaRetirarCarro.SelectedValue.ToString();
+
+                if (negApar.CargarCarrosActivosParqueos(entApar) != null)
+                {
+                    dataGridvehiculosActivos.DataSource = negApar.CargarCarrosActivosParqueos(entApar);
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error", "Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
+        private void dataGridvehiculosActivos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtPlacaRetiraVehiculo.Text = dataGridvehiculosActivos.CurrentRow.Cells[0].Value.ToString();
+            txtMarcaRetiraVehiculo.Text = dataGridvehiculosActivos.CurrentRow.Cells[1].Value.ToString();
+            txtModeloRetiraVehiculo.Text = dataGridvehiculosActivos.CurrentRow.Cells[2].Value.ToString();
+            txtNombreClienteRetira.Text = dataGridvehiculosActivos.CurrentRow.Cells[3].Value.ToString();
+            txtCedClienteRetira.Text = dataGridvehiculosActivos.CurrentRow.Cells[4].Value.ToString();
+            txtCorreoClienteRetira.Text = dataGridvehiculosActivos.CurrentRow.Cells[5].Value.ToString();
+            txtTelefonoClienteRetira.Text = dataGridvehiculosActivos.CurrentRow.Cells[6].Value.ToString();
+            lbFechaIngresaRetiraVehiculo.Text = dataGridvehiculosActivos.CurrentRow.Cells[7].Value.ToString();
+
+            if (dataGridvehiculosActivos.CurrentRow.Cells[8].Value.ToString().Equals("Carro"))
+                rdTipoRetiraCarro.Checked=true;
+            else
+                rdTipoRetiraMoto.Checked= true;
+
+        }
+
+        private void btnRetirarVehiculo_Click(object sender, EventArgs e)
+        {
             RetirarVehiculo();
         }
 
         public void RetirarVehiculo()
         {
+            try
+            {
+                entApar._SCedJuParqueo = cmbParqueoParaRetirarCarro.SelectedValue.ToString();
+                entApar._SCedulaUsuario = txtCedClienteRetira.Text;
+                if (rdTipoRetiraCarro.Checked)
+                    entApar._STipoVehiculo = "Carro";
+                else
+                    entApar._STipoVehiculo = "Moto";
 
+                entApar._SPlacaVehiculo = txtPlacaRetiraVehiculo.Text;
+                entApar._DtFechaHoraSalida = DateTime.Now;
+                entApar._BEstadVehiculo = true;
+
+                if (negApar.SalirAparcado(entApar))
+                {
+                    MessageBox.Show("Se ha liberado correctamente el vehiculo del parqueo", "Aparcado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                    MessageBox.Show("No se ha liberado correctamente", "Aparcado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error", "Ingreso Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
     }
 }

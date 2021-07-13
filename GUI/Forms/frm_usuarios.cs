@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios.NegociosParqueo;
 using Negocios.NegociosUsuario;
+using GUI.Forms;
 
 namespace GUI.Forms
 {
@@ -100,9 +101,15 @@ namespace GUI.Forms
             else
                 MessageBox.Show("Aún no hay información cargada", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        
+
+
         #endregion
 
-       
+        private void btn_AparcarCliente_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
     }
 }

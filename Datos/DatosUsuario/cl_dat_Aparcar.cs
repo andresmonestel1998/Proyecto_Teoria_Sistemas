@@ -59,11 +59,16 @@ namespace Datos.DatosUsuario
             return tabla;
         }
 
-        public DataTable BuscarParqueo(String cedula)
+        public DataTable BuscarCarroSalirParqueo(cl_ent_aparcar aparca)
         {
-            SqlCommand Comando = new SqlCommand("BuscarParqueo", Conextion);
-            Comando.Parameters.Add("@CedulaJuridica", SqlDbType.NVarChar).Value = cedula;
+            SqlCommand Comando = new SqlCommand("BuscarDatosCarroAparcado", Conextion);
+            Comando.Parameters.Add("@cedulaParqueo", SqlDbType.NVarChar).Value = aparca._SCedJuParqueo;
+            Comando.Parameters.Add("@placa", SqlDbType.NVarChar).Value = aparca._SPlacaVehiculo;
+            Comando.Parameters.Add("@tipoVehiculo", SqlDbType.NVarChar).Value = aparca._STipoVehiculo;
+            Comando.Parameters.Add("@estado", SqlDbType.NVarChar).Value = aparca._BEstadVehiculo;
+
             Comando.CommandType = CommandType.StoredProcedure;
+            
             Conextion.Open();
 
             SqlDataReader ObjReader = Comando.ExecuteReader();
@@ -84,19 +89,45 @@ namespace Datos.DatosUsuario
             }
         }
 
-        public bool EditarParqueo(cl_ent_Parqueo parqueo)
+
+        public DataTable CargarCarrosParqueo(cl_ent_aparcar aparca)
+        {
+            SqlCommand Comando = new SqlCommand("CargarCarrosEnParqueo", Conextion);
+            Comando.Parameters.Add("@cedulaParqueo", SqlDbType.NVarChar).Value = aparca._SCedJuParqueo;
+     
+            Comando.CommandType = CommandType.StoredProcedure;
+
+            Conextion.Open();
+
+            SqlDataReader ObjReader = Comando.ExecuteReader();
+
+            if (ObjReader.Read())
+            {
+                ObjReader.Close();
+                SqlDataAdapter data = new SqlDataAdapter(Comando);
+                DataTable tabla = new DataTable();
+                data.Fill(tabla);
+                Conextion.Close();
+                return tabla;
+            }
+            else
+            {
+                Conextion.Close();
+                return null;
+            }
+        }
+
+        public Boolean SalirAparcar(cl_ent_aparcar aparcar)
         {
 
-            SqlCommand Comando = new SqlCommand("EditarParqueo", Conextion);
+            SqlCommand Comando = new SqlCommand("SalirAparcado", Conextion);
 
-            Comando.Parameters.Add("@CedulaJuridicaParqueo", SqlDbType.NVarChar).Value = parqueo._SCedJuParqueo;
-            Comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = parqueo._SNombre;
-            Comando.Parameters.Add("@Provincia", SqlDbType.NVarChar).Value = parqueo._SProvincia;
-            Comando.Parameters.Add("@Canton", SqlDbType.NVarChar).Value = parqueo._SCanton;
-            Comando.Parameters.Add("@Distrito", SqlDbType.NVarChar).Value = parqueo._SDistrito;
-            Comando.Parameters.Add("@Calle", SqlDbType.NVarChar).Value = parqueo._SCalle;
-            Comando.Parameters.Add("@telefono", SqlDbType.NVarChar).Value = parqueo._STelefono;
-            Comando.Parameters.Add("@cantidadCampos", SqlDbType.Int).Value = parqueo._ICamposDisponibles;
+            Comando.Parameters.Add("@v_CedulaJuridicaParqueo", SqlDbType.NVarChar).Value = aparcar._SCedJuParqueo;
+            Comando.Parameters.Add("@v_cedulaUsuario", SqlDbType.NVarChar).Value = aparcar._SCedulaUsuario;
+            Comando.Parameters.Add("@v_tipoVehiculo", SqlDbType.NVarChar).Value = aparcar._STipoVehiculo;
+            Comando.Parameters.Add("@v_placa", SqlDbType.NVarChar).Value = aparcar._SPlacaVehiculo;
+            Comando.Parameters.Add("@v_fechaSale", SqlDbType.DateTime).Value = aparcar._DtFechaHoraSalida;
+            Comando.Parameters.Add("@estado", SqlDbType.Bit).Value = aparcar._BEstadVehiculo;
 
             Comando.CommandType = CommandType.StoredProcedure;
 

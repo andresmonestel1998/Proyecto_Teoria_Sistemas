@@ -31,6 +31,9 @@ namespace GUI.Forms
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.aparcadosEntreFechasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetCNBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetCN = new GUI.DataSet.DataSetCN();
             this.EmpleadosTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.SubEmpleados = new System.Windows.Forms.TabControl();
@@ -92,9 +95,13 @@ namespace GUI.Forms
             this.rdbTipoUsuarioInvitado = new System.Windows.Forms.RadioButton();
             this.rdbTipoUsuarioCliente = new System.Windows.Forms.RadioButton();
             this.gBoxInvitados = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.btnLimpiarVehiculoInvitado = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
+            this.label51 = new System.Windows.Forms.Label();
             this.txtInvitadoVehiculoModelo = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
             this.txtInvitadoVehiculoMarca = new System.Windows.Forms.TextBox();
             this.txtInvitadoVehiculoPlaca = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
@@ -137,9 +144,47 @@ namespace GUI.Forms
             this.label45 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.label63 = new System.Windows.Forms.Label();
+            this.dataGridvehiculosActivos = new System.Windows.Forms.DataGridView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.cmbParqueoParaRetirarCarro = new System.Windows.Forms.ComboBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.lbFechaIngresaRetiraVehiculo = new System.Windows.Forms.Label();
+            this.lbFechaSaleRetiraVehiculo = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.txtModeloRetiraVehiculo = new System.Windows.Forms.TextBox();
+            this.txtMarcaRetiraVehiculo = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.txtPlacaRetiraVehiculo = new System.Windows.Forms.TextBox();
+            this.rdTipoRetiraCarro = new System.Windows.Forms.RadioButton();
+            this.rdTipoRetiraMoto = new System.Windows.Forms.RadioButton();
+            this.label84 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnRetirarVehiculo = new System.Windows.Forms.Button();
+            this.txtTelefonoClienteRetira = new System.Windows.Forms.TextBox();
+            this.txtCorreoClienteRetira = new System.Windows.Forms.TextBox();
+            this.txtNombreClienteRetira = new System.Windows.Forms.TextBox();
+            this.btnBuscarPlacaRetiraVehiculo = new System.Windows.Forms.Button();
+            this.txtCedClienteRetira = new System.Windows.Forms.MaskedTextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cmbInformeParqueo = new System.Windows.Forms.ComboBox();
+            this.btnInformeFechas = new System.Windows.Forms.Button();
+            this.dtFechaFinReporte = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaInicioInforme = new System.Windows.Forms.DateTimePicker();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.repoAparcados = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.btnConsultarParqueos = new System.Windows.Forms.Button();
             this.dataGridConsultarParqueo = new System.Windows.Forms.DataGridView();
@@ -197,50 +242,10 @@ namespace GUI.Forms
             this.label41 = new System.Windows.Forms.Label();
             this.tabCerrarSesion = new System.Windows.Forms.TabPage();
             this.TimerHoraIngresa = new System.Windows.Forms.Timer(this.components);
-            this.repoAparcados = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.aparcadosEntreFechasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label28 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.dtFechaInicioInforme = new System.Windows.Forms.DateTimePicker();
-            this.dtFechaFinReporte = new System.Windows.Forms.DateTimePicker();
-            this.btnInformeFechas = new System.Windows.Forms.Button();
-            this.dataSetCN = new GUI.DataSet.DataSetCN();
-            this.dataSetCNBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aparcadosEntreFechasTableAdapter = new GUI.DataSet.DataSetCNTableAdapters.AparcadosEntreFechasTableAdapter();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cmbInformeParqueo = new System.Windows.Forms.ComboBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.cmbParqueoParaRetirarCarro = new System.Windows.Forms.ComboBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.txtPlacaRetiraVehiculo = new System.Windows.Forms.TextBox();
-            this.rdTipoRetiraCarro = new System.Windows.Forms.RadioButton();
-            this.rdTipoRetiraMoto = new System.Windows.Forms.RadioButton();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.btnBuscarPlacaRetiraVehiculo = new System.Windows.Forms.Button();
-            this.txtCedClienteRetira = new System.Windows.Forms.MaskedTextBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.aparcadosEntreFechasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCNBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCN)).BeginInit();
             this.EmpleadosTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SubEmpleados.SuspendLayout();
@@ -261,6 +266,9 @@ namespace GUI.Forms
             this.gBoxInvitados.SuspendLayout();
             this.gBoxClientes.SuspendLayout();
             this.tabPage16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridvehiculosActivos)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultarParqueo)).BeginInit();
@@ -271,12 +279,22 @@ namespace GUI.Forms
             this.tabPage14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEditaParqueo)).BeginInit();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aparcadosEntreFechasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetCN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetCNBindingSource)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // aparcadosEntreFechasBindingSource
+            // 
+            this.aparcadosEntreFechasBindingSource.DataMember = "AparcadosEntreFechas";
+            this.aparcadosEntreFechasBindingSource.DataSource = this.dataSetCNBindingSource;
+            // 
+            // dataSetCNBindingSource
+            // 
+            this.dataSetCNBindingSource.DataSource = this.dataSetCN;
+            this.dataSetCNBindingSource.Position = 0;
+            // 
+            // dataSetCN
+            // 
+            this.dataSetCN.DataSetName = "DataSetCN";
+            this.dataSetCN.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EmpleadosTab
             // 
@@ -935,6 +953,15 @@ namespace GUI.Forms
             this.gBoxInvitados.TabStop = false;
             this.gBoxInvitados.Text = "Invitados";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(184, 518);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(24, 24);
+            this.label32.TabIndex = 30;
+            this.label32.Text = "H";
+            // 
             // btnLimpiarVehiculoInvitado
             // 
             this.btnLimpiarVehiculoInvitado.Location = new System.Drawing.Point(560, 658);
@@ -945,6 +972,15 @@ namespace GUI.Forms
             this.btnLimpiarVehiculoInvitado.UseVisualStyleBackColor = true;
             this.btnLimpiarVehiculoInvitado.Click += new System.EventHandler(this.btnLimpiarVehiculoInvitado_Click);
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(184, 593);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(24, 24);
+            this.label35.TabIndex = 29;
+            this.label35.Text = "H";
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(377, 658);
@@ -954,12 +990,30 @@ namespace GUI.Forms
             this.button9.Text = "Aparcar vehículo";
             this.button9.UseVisualStyleBackColor = true;
             // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(19, 593);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(123, 24);
+            this.label51.TabIndex = 28;
+            this.label51.Text = "Hora Ingresa:";
+            // 
             // txtInvitadoVehiculoModelo
             // 
             this.txtInvitadoVehiculoModelo.Location = new System.Drawing.Point(105, 440);
             this.txtInvitadoVehiculoModelo.Name = "txtInvitadoVehiculoModelo";
             this.txtInvitadoVehiculoModelo.Size = new System.Drawing.Size(141, 28);
             this.txtInvitadoVehiculoModelo.TabIndex = 27;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(19, 523);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(136, 24);
+            this.label62.TabIndex = 27;
+            this.label62.Text = "Fecha Ingresa:";
             // 
             // txtInvitadoVehiculoMarca
             // 
@@ -1349,6 +1403,8 @@ namespace GUI.Forms
             // 
             // tabPage16
             // 
+            this.tabPage16.Controls.Add(this.label63);
+            this.tabPage16.Controls.Add(this.dataGridvehiculosActivos);
             this.tabPage16.Controls.Add(this.groupBox5);
             this.tabPage16.Controls.Add(this.groupBox11);
             this.tabPage16.Location = new System.Drawing.Point(4, 32);
@@ -1357,6 +1413,309 @@ namespace GUI.Forms
             this.tabPage16.TabIndex = 7;
             this.tabPage16.Text = "Retirar Vehículo";
             this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(853, 97);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(400, 23);
+            this.label63.TabIndex = 31;
+            this.label63.Text = "Vehículos Activos en el Parqueo Seleccionado:";
+            // 
+            // dataGridvehiculosActivos
+            // 
+            this.dataGridvehiculosActivos.AllowUserToAddRows = false;
+            this.dataGridvehiculosActivos.AllowUserToDeleteRows = false;
+            this.dataGridvehiculosActivos.AllowUserToOrderColumns = true;
+            this.dataGridvehiculosActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridvehiculosActivos.Location = new System.Drawing.Point(853, 137);
+            this.dataGridvehiculosActivos.Name = "dataGridvehiculosActivos";
+            this.dataGridvehiculosActivos.ReadOnly = true;
+            this.dataGridvehiculosActivos.RowHeadersWidth = 51;
+            this.dataGridvehiculosActivos.RowTemplate.Height = 24;
+            this.dataGridvehiculosActivos.Size = new System.Drawing.Size(964, 712);
+            this.dataGridvehiculosActivos.TabIndex = 30;
+            this.dataGridvehiculosActivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridvehiculosActivos_CellClick);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label64);
+            this.groupBox5.Controls.Add(this.cmbParqueoParaRetirarCarro);
+            this.groupBox5.Location = new System.Drawing.Point(14, 19);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(551, 63);
+            this.groupBox5.TabIndex = 29;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Parqueo";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(6, 26);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(187, 23);
+            this.label64.TabIndex = 22;
+            this.label64.Text = "Seleccionar parqueo:";
+            // 
+            // cmbParqueoParaRetirarCarro
+            // 
+            this.cmbParqueoParaRetirarCarro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbParqueoParaRetirarCarro.FormattingEnabled = true;
+            this.cmbParqueoParaRetirarCarro.Location = new System.Drawing.Point(204, 18);
+            this.cmbParqueoParaRetirarCarro.Name = "cmbParqueoParaRetirarCarro";
+            this.cmbParqueoParaRetirarCarro.Size = new System.Drawing.Size(303, 31);
+            this.cmbParqueoParaRetirarCarro.TabIndex = 23;
+            this.cmbParqueoParaRetirarCarro.SelectedIndexChanged += new System.EventHandler(this.cmbParqueoParaRetirarCarro_SelectedIndexChanged);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.lbFechaIngresaRetiraVehiculo);
+            this.groupBox11.Controls.Add(this.lbFechaSaleRetiraVehiculo);
+            this.groupBox11.Controls.Add(this.label80);
+            this.groupBox11.Controls.Add(this.txtModeloRetiraVehiculo);
+            this.groupBox11.Controls.Add(this.txtMarcaRetiraVehiculo);
+            this.groupBox11.Controls.Add(this.label81);
+            this.groupBox11.Controls.Add(this.label82);
+            this.groupBox11.Controls.Add(this.label83);
+            this.groupBox11.Controls.Add(this.txtPlacaRetiraVehiculo);
+            this.groupBox11.Controls.Add(this.rdTipoRetiraCarro);
+            this.groupBox11.Controls.Add(this.rdTipoRetiraMoto);
+            this.groupBox11.Controls.Add(this.label84);
+            this.groupBox11.Controls.Add(this.label85);
+            this.groupBox11.Controls.Add(this.button3);
+            this.groupBox11.Controls.Add(this.btnRetirarVehiculo);
+            this.groupBox11.Controls.Add(this.txtTelefonoClienteRetira);
+            this.groupBox11.Controls.Add(this.txtCorreoClienteRetira);
+            this.groupBox11.Controls.Add(this.txtNombreClienteRetira);
+            this.groupBox11.Controls.Add(this.btnBuscarPlacaRetiraVehiculo);
+            this.groupBox11.Controls.Add(this.txtCedClienteRetira);
+            this.groupBox11.Controls.Add(this.label86);
+            this.groupBox11.Controls.Add(this.label87);
+            this.groupBox11.Controls.Add(this.label88);
+            this.groupBox11.Controls.Add(this.label89);
+            this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox11.Location = new System.Drawing.Point(14, 126);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(785, 723);
+            this.groupBox11.TabIndex = 26;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Usuarios";
+            // 
+            // lbFechaIngresaRetiraVehiculo
+            // 
+            this.lbFechaIngresaRetiraVehiculo.AutoSize = true;
+            this.lbFechaIngresaRetiraVehiculo.Location = new System.Drawing.Point(184, 533);
+            this.lbFechaIngresaRetiraVehiculo.Name = "lbFechaIngresaRetiraVehiculo";
+            this.lbFechaIngresaRetiraVehiculo.Size = new System.Drawing.Size(0, 24);
+            this.lbFechaIngresaRetiraVehiculo.TabIndex = 26;
+            // 
+            // lbFechaSaleRetiraVehiculo
+            // 
+            this.lbFechaSaleRetiraVehiculo.AutoSize = true;
+            this.lbFechaSaleRetiraVehiculo.Location = new System.Drawing.Point(184, 593);
+            this.lbFechaSaleRetiraVehiculo.Name = "lbFechaSaleRetiraVehiculo";
+            this.lbFechaSaleRetiraVehiculo.Size = new System.Drawing.Size(24, 24);
+            this.lbFechaSaleRetiraVehiculo.TabIndex = 25;
+            this.lbFechaSaleRetiraVehiculo.Text = "H";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(26, 593);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(111, 24);
+            this.label80.TabIndex = 24;
+            this.label80.Text = "Fecha Sale:";
+            // 
+            // txtModeloRetiraVehiculo
+            // 
+            this.txtModeloRetiraVehiculo.Enabled = false;
+            this.txtModeloRetiraVehiculo.Location = new System.Drawing.Point(109, 222);
+            this.txtModeloRetiraVehiculo.Name = "txtModeloRetiraVehiculo";
+            this.txtModeloRetiraVehiculo.Size = new System.Drawing.Size(141, 28);
+            this.txtModeloRetiraVehiculo.TabIndex = 23;
+            // 
+            // txtMarcaRetiraVehiculo
+            // 
+            this.txtMarcaRetiraVehiculo.Enabled = false;
+            this.txtMarcaRetiraVehiculo.Location = new System.Drawing.Point(109, 158);
+            this.txtMarcaRetiraVehiculo.Name = "txtMarcaRetiraVehiculo";
+            this.txtMarcaRetiraVehiculo.Size = new System.Drawing.Size(141, 28);
+            this.txtMarcaRetiraVehiculo.TabIndex = 22;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(26, 225);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(79, 24);
+            this.label81.TabIndex = 21;
+            this.label81.Text = "Modelo:";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(26, 164);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(67, 24);
+            this.label82.TabIndex = 20;
+            this.label82.Text = "Marca:";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(26, 533);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(136, 24);
+            this.label83.TabIndex = 19;
+            this.label83.Text = "Fecha Ingresa:";
+            // 
+            // txtPlacaRetiraVehiculo
+            // 
+            this.txtPlacaRetiraVehiculo.Location = new System.Drawing.Point(109, 97);
+            this.txtPlacaRetiraVehiculo.MaxLength = 6;
+            this.txtPlacaRetiraVehiculo.Name = "txtPlacaRetiraVehiculo";
+            this.txtPlacaRetiraVehiculo.Size = new System.Drawing.Size(105, 28);
+            this.txtPlacaRetiraVehiculo.TabIndex = 18;
+            // 
+            // rdTipoRetiraCarro
+            // 
+            this.rdTipoRetiraCarro.AutoSize = true;
+            this.rdTipoRetiraCarro.Checked = true;
+            this.rdTipoRetiraCarro.Location = new System.Drawing.Point(188, 37);
+            this.rdTipoRetiraCarro.Name = "rdTipoRetiraCarro";
+            this.rdTipoRetiraCarro.Size = new System.Drawing.Size(77, 28);
+            this.rdTipoRetiraCarro.TabIndex = 17;
+            this.rdTipoRetiraCarro.TabStop = true;
+            this.rdTipoRetiraCarro.Text = "Carro";
+            this.rdTipoRetiraCarro.UseVisualStyleBackColor = true;
+            // 
+            // rdTipoRetiraMoto
+            // 
+            this.rdTipoRetiraMoto.AutoSize = true;
+            this.rdTipoRetiraMoto.Location = new System.Drawing.Point(285, 37);
+            this.rdTipoRetiraMoto.Name = "rdTipoRetiraMoto";
+            this.rdTipoRetiraMoto.Size = new System.Drawing.Size(126, 28);
+            this.rdTipoRetiraMoto.TabIndex = 16;
+            this.rdTipoRetiraMoto.Text = "Motocicleta";
+            this.rdTipoRetiraMoto.UseVisualStyleBackColor = true;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(26, 41);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(129, 24);
+            this.label84.TabIndex = 13;
+            this.label84.Text = "Tipo vehículo:";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(26, 103);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(61, 24);
+            this.label85.TabIndex = 12;
+            this.label85.Text = "Placa:";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(605, 655);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(158, 49);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Limpiar datos";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnRetirarVehiculo
+            // 
+            this.btnRetirarVehiculo.Location = new System.Drawing.Point(422, 655);
+            this.btnRetirarVehiculo.Name = "btnRetirarVehiculo";
+            this.btnRetirarVehiculo.Size = new System.Drawing.Size(167, 49);
+            this.btnRetirarVehiculo.TabIndex = 10;
+            this.btnRetirarVehiculo.Text = "Retirar vehículo";
+            this.btnRetirarVehiculo.UseVisualStyleBackColor = true;
+            this.btnRetirarVehiculo.Click += new System.EventHandler(this.btnRetirarVehiculo_Click);
+            // 
+            // txtTelefonoClienteRetira
+            // 
+            this.txtTelefonoClienteRetira.Enabled = false;
+            this.txtTelefonoClienteRetira.Location = new System.Drawing.Point(155, 471);
+            this.txtTelefonoClienteRetira.Name = "txtTelefonoClienteRetira";
+            this.txtTelefonoClienteRetira.Size = new System.Drawing.Size(174, 28);
+            this.txtTelefonoClienteRetira.TabIndex = 9;
+            // 
+            // txtCorreoClienteRetira
+            // 
+            this.txtCorreoClienteRetira.Enabled = false;
+            this.txtCorreoClienteRetira.Location = new System.Drawing.Point(155, 407);
+            this.txtCorreoClienteRetira.Name = "txtCorreoClienteRetira";
+            this.txtCorreoClienteRetira.Size = new System.Drawing.Size(311, 28);
+            this.txtCorreoClienteRetira.TabIndex = 8;
+            // 
+            // txtNombreClienteRetira
+            // 
+            this.txtNombreClienteRetira.Enabled = false;
+            this.txtNombreClienteRetira.Location = new System.Drawing.Point(217, 287);
+            this.txtNombreClienteRetira.Name = "txtNombreClienteRetira";
+            this.txtNombreClienteRetira.Size = new System.Drawing.Size(257, 28);
+            this.txtNombreClienteRetira.TabIndex = 7;
+            // 
+            // btnBuscarPlacaRetiraVehiculo
+            // 
+            this.btnBuscarPlacaRetiraVehiculo.Location = new System.Drawing.Point(241, 96);
+            this.btnBuscarPlacaRetiraVehiculo.Name = "btnBuscarPlacaRetiraVehiculo";
+            this.btnBuscarPlacaRetiraVehiculo.Size = new System.Drawing.Size(160, 29);
+            this.btnBuscarPlacaRetiraVehiculo.TabIndex = 6;
+            this.btnBuscarPlacaRetiraVehiculo.Text = "Buscar Placa";
+            this.btnBuscarPlacaRetiraVehiculo.UseVisualStyleBackColor = true;
+            this.btnBuscarPlacaRetiraVehiculo.Click += new System.EventHandler(this.btnBuscarPlacaRetiraVehiculo_Click);
+            // 
+            // txtCedClienteRetira
+            // 
+            this.txtCedClienteRetira.Enabled = false;
+            this.txtCedClienteRetira.Location = new System.Drawing.Point(217, 348);
+            this.txtCedClienteRetira.Mask = "9-9999-9999";
+            this.txtCedClienteRetira.Name = "txtCedClienteRetira";
+            this.txtCedClienteRetira.Size = new System.Drawing.Size(130, 28);
+            this.txtCedClienteRetira.TabIndex = 5;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(26, 348);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(135, 24);
+            this.label86.TabIndex = 4;
+            this.label86.Text = "Cédula cliente:";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(26, 410);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(73, 24);
+            this.label87.TabIndex = 3;
+            this.label87.Text = "Correo:";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(26, 474);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(90, 24);
+            this.label88.TabIndex = 2;
+            this.label88.Text = "Telefono:";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(26, 287);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(175, 24);
+            this.label89.TabIndex = 1;
+            this.label89.Text = "Nombre del cliente:";
             // 
             // tabPage4
             // 
@@ -1394,6 +1753,81 @@ namespace GUI.Forms
             this.tabPage15.TabIndex = 6;
             this.tabPage15.Text = "Historico del parqueo";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(39, 290);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(197, 23);
+            this.label31.TabIndex = 24;
+            this.label31.Text = "Seleccionar parqueo:";
+            // 
+            // cmbInformeParqueo
+            // 
+            this.cmbInformeParqueo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbInformeParqueo.FormattingEnabled = true;
+            this.cmbInformeParqueo.Location = new System.Drawing.Point(43, 340);
+            this.cmbInformeParqueo.Name = "cmbInformeParqueo";
+            this.cmbInformeParqueo.Size = new System.Drawing.Size(303, 31);
+            this.cmbInformeParqueo.TabIndex = 25;
+            // 
+            // btnInformeFechas
+            // 
+            this.btnInformeFechas.Location = new System.Drawing.Point(271, 507);
+            this.btnInformeFechas.Name = "btnInformeFechas";
+            this.btnInformeFechas.Size = new System.Drawing.Size(118, 34);
+            this.btnInformeFechas.TabIndex = 5;
+            this.btnInformeFechas.Text = "Cargar";
+            this.btnInformeFechas.UseVisualStyleBackColor = true;
+            this.btnInformeFechas.Click += new System.EventHandler(this.btnInformeFechas_Click);
+            // 
+            // dtFechaFinReporte
+            // 
+            this.dtFechaFinReporte.Location = new System.Drawing.Point(43, 206);
+            this.dtFechaFinReporte.Name = "dtFechaFinReporte";
+            this.dtFechaFinReporte.Size = new System.Drawing.Size(323, 30);
+            this.dtFechaFinReporte.TabIndex = 4;
+            // 
+            // dtFechaInicioInforme
+            // 
+            this.dtFechaInicioInforme.Location = new System.Drawing.Point(43, 69);
+            this.dtFechaInicioInforme.Name = "dtFechaInicioInforme";
+            this.dtFechaInicioInforme.Size = new System.Drawing.Size(323, 30);
+            this.dtFechaInicioInforme.TabIndex = 3;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(39, 144);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(97, 23);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Fecha Fin:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(39, 29);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(119, 23);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "Fecha Inicio:";
+            // 
+            // repoAparcados
+            // 
+            reportDataSource2.Name = "DataSetAparcados";
+            reportDataSource2.Value = this.aparcadosEntreFechasBindingSource;
+            this.repoAparcados.LocalReport.DataSources.Add(reportDataSource2);
+            this.repoAparcados.LocalReport.ReportEmbeddedResource = "GUI.Informes.ReporteAparcados.rdlc";
+            this.repoAparcados.Location = new System.Drawing.Point(395, 29);
+            this.repoAparcados.Name = "repoAparcados";
+            this.repoAparcados.ServerReport.BearerToken = null;
+            this.repoAparcados.Size = new System.Drawing.Size(1422, 756);
+            this.repoAparcados.TabIndex = 0;
             // 
             // tabPage12
             // 
@@ -1952,413 +2386,9 @@ namespace GUI.Forms
             this.TimerHoraIngresa.Enabled = true;
             this.TimerHoraIngresa.Tick += new System.EventHandler(this.TimerHoraIngresa_Tick);
             // 
-            // repoAparcados
-            // 
-            reportDataSource2.Name = "DataSetAparcados";
-            reportDataSource2.Value = this.aparcadosEntreFechasBindingSource;
-            this.repoAparcados.LocalReport.DataSources.Add(reportDataSource2);
-            this.repoAparcados.LocalReport.ReportEmbeddedResource = "GUI.Informes.ReporteAparcados.rdlc";
-            this.repoAparcados.Location = new System.Drawing.Point(395, 29);
-            this.repoAparcados.Name = "repoAparcados";
-            this.repoAparcados.ServerReport.BearerToken = null;
-            this.repoAparcados.Size = new System.Drawing.Size(1422, 756);
-            this.repoAparcados.TabIndex = 0;
-            // 
-            // aparcadosEntreFechasBindingSource
-            // 
-            this.aparcadosEntreFechasBindingSource.DataMember = "AparcadosEntreFechas";
-            this.aparcadosEntreFechasBindingSource.DataSource = this.dataSetCNBindingSource;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(39, 29);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(119, 23);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "Fecha Inicio:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(39, 144);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(97, 23);
-            this.label30.TabIndex = 2;
-            this.label30.Text = "Fecha Fin:";
-            // 
-            // dtFechaInicioInforme
-            // 
-            this.dtFechaInicioInforme.Location = new System.Drawing.Point(43, 69);
-            this.dtFechaInicioInforme.Name = "dtFechaInicioInforme";
-            this.dtFechaInicioInforme.Size = new System.Drawing.Size(323, 30);
-            this.dtFechaInicioInforme.TabIndex = 3;
-            // 
-            // dtFechaFinReporte
-            // 
-            this.dtFechaFinReporte.Location = new System.Drawing.Point(43, 206);
-            this.dtFechaFinReporte.Name = "dtFechaFinReporte";
-            this.dtFechaFinReporte.Size = new System.Drawing.Size(323, 30);
-            this.dtFechaFinReporte.TabIndex = 4;
-            // 
-            // btnInformeFechas
-            // 
-            this.btnInformeFechas.Location = new System.Drawing.Point(271, 507);
-            this.btnInformeFechas.Name = "btnInformeFechas";
-            this.btnInformeFechas.Size = new System.Drawing.Size(118, 34);
-            this.btnInformeFechas.TabIndex = 5;
-            this.btnInformeFechas.Text = "Cargar";
-            this.btnInformeFechas.UseVisualStyleBackColor = true;
-            this.btnInformeFechas.Click += new System.EventHandler(this.btnInformeFechas_Click);
-            // 
-            // dataSetCN
-            // 
-            this.dataSetCN.DataSetName = "DataSetCN";
-            this.dataSetCN.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataSetCNBindingSource
-            // 
-            this.dataSetCNBindingSource.DataSource = this.dataSetCN;
-            this.dataSetCNBindingSource.Position = 0;
-            // 
             // aparcadosEntreFechasTableAdapter
             // 
             this.aparcadosEntreFechasTableAdapter.ClearBeforeFill = true;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(39, 290);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(197, 23);
-            this.label31.TabIndex = 24;
-            this.label31.Text = "Seleccionar parqueo:";
-            // 
-            // cmbInformeParqueo
-            // 
-            this.cmbInformeParqueo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbInformeParqueo.FormattingEnabled = true;
-            this.cmbInformeParqueo.Location = new System.Drawing.Point(43, 340);
-            this.cmbInformeParqueo.Name = "cmbInformeParqueo";
-            this.cmbInformeParqueo.Size = new System.Drawing.Size(303, 31);
-            this.cmbInformeParqueo.TabIndex = 25;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(184, 518);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(24, 24);
-            this.label32.TabIndex = 30;
-            this.label32.Text = "H";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(184, 593);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(24, 24);
-            this.label35.TabIndex = 29;
-            this.label35.Text = "H";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(19, 593);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(123, 24);
-            this.label51.TabIndex = 28;
-            this.label51.Text = "Hora Ingresa:";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(19, 523);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(136, 24);
-            this.label62.TabIndex = 27;
-            this.label62.Text = "Fecha Ingresa:";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label64);
-            this.groupBox5.Controls.Add(this.cmbParqueoParaRetirarCarro);
-            this.groupBox5.Location = new System.Drawing.Point(14, 19);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(551, 63);
-            this.groupBox5.TabIndex = 29;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Parqueo";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(6, 26);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(187, 23);
-            this.label64.TabIndex = 22;
-            this.label64.Text = "Seleccionar parqueo:";
-            // 
-            // cmbParqueoParaRetirarCarro
-            // 
-            this.cmbParqueoParaRetirarCarro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbParqueoParaRetirarCarro.FormattingEnabled = true;
-            this.cmbParqueoParaRetirarCarro.Location = new System.Drawing.Point(204, 18);
-            this.cmbParqueoParaRetirarCarro.Name = "cmbParqueoParaRetirarCarro";
-            this.cmbParqueoParaRetirarCarro.Size = new System.Drawing.Size(303, 31);
-            this.cmbParqueoParaRetirarCarro.TabIndex = 23;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.label78);
-            this.groupBox11.Controls.Add(this.label79);
-            this.groupBox11.Controls.Add(this.label80);
-            this.groupBox11.Controls.Add(this.textBox7);
-            this.groupBox11.Controls.Add(this.textBox8);
-            this.groupBox11.Controls.Add(this.label81);
-            this.groupBox11.Controls.Add(this.label82);
-            this.groupBox11.Controls.Add(this.label83);
-            this.groupBox11.Controls.Add(this.txtPlacaRetiraVehiculo);
-            this.groupBox11.Controls.Add(this.rdTipoRetiraCarro);
-            this.groupBox11.Controls.Add(this.rdTipoRetiraMoto);
-            this.groupBox11.Controls.Add(this.label84);
-            this.groupBox11.Controls.Add(this.label85);
-            this.groupBox11.Controls.Add(this.button3);
-            this.groupBox11.Controls.Add(this.button4);
-            this.groupBox11.Controls.Add(this.textBox10);
-            this.groupBox11.Controls.Add(this.textBox11);
-            this.groupBox11.Controls.Add(this.textBox12);
-            this.groupBox11.Controls.Add(this.btnBuscarPlacaRetiraVehiculo);
-            this.groupBox11.Controls.Add(this.txtCedClienteRetira);
-            this.groupBox11.Controls.Add(this.label86);
-            this.groupBox11.Controls.Add(this.label87);
-            this.groupBox11.Controls.Add(this.label88);
-            this.groupBox11.Controls.Add(this.label89);
-            this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox11.Location = new System.Drawing.Point(14, 126);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(785, 723);
-            this.groupBox11.TabIndex = 26;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Usuarios";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(184, 533);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(24, 24);
-            this.label78.TabIndex = 26;
-            this.label78.Text = "H";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(184, 593);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(24, 24);
-            this.label79.TabIndex = 25;
-            this.label79.Text = "H";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(26, 593);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(111, 24);
-            this.label80.TabIndex = 24;
-            this.label80.Text = "Fecha Sale:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(109, 222);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(141, 28);
-            this.textBox7.TabIndex = 23;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(109, 158);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(141, 28);
-            this.textBox8.TabIndex = 22;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(26, 225);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(79, 24);
-            this.label81.TabIndex = 21;
-            this.label81.Text = "Modelo:";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(26, 164);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(67, 24);
-            this.label82.TabIndex = 20;
-            this.label82.Text = "Marca:";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(26, 533);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(136, 24);
-            this.label83.TabIndex = 19;
-            this.label83.Text = "Fecha Ingresa:";
-            // 
-            // txtPlacaRetiraVehiculo
-            // 
-            this.txtPlacaRetiraVehiculo.Location = new System.Drawing.Point(109, 97);
-            this.txtPlacaRetiraVehiculo.MaxLength = 6;
-            this.txtPlacaRetiraVehiculo.Name = "txtPlacaRetiraVehiculo";
-            this.txtPlacaRetiraVehiculo.Size = new System.Drawing.Size(105, 28);
-            this.txtPlacaRetiraVehiculo.TabIndex = 18;
-            // 
-            // rdTipoRetiraCarro
-            // 
-            this.rdTipoRetiraCarro.AutoSize = true;
-            this.rdTipoRetiraCarro.Checked = true;
-            this.rdTipoRetiraCarro.Location = new System.Drawing.Point(188, 37);
-            this.rdTipoRetiraCarro.Name = "rdTipoRetiraCarro";
-            this.rdTipoRetiraCarro.Size = new System.Drawing.Size(77, 28);
-            this.rdTipoRetiraCarro.TabIndex = 17;
-            this.rdTipoRetiraCarro.TabStop = true;
-            this.rdTipoRetiraCarro.Text = "Carro";
-            this.rdTipoRetiraCarro.UseVisualStyleBackColor = true;
-            // 
-            // rdTipoRetiraMoto
-            // 
-            this.rdTipoRetiraMoto.AutoSize = true;
-            this.rdTipoRetiraMoto.Location = new System.Drawing.Point(285, 37);
-            this.rdTipoRetiraMoto.Name = "rdTipoRetiraMoto";
-            this.rdTipoRetiraMoto.Size = new System.Drawing.Size(126, 28);
-            this.rdTipoRetiraMoto.TabIndex = 16;
-            this.rdTipoRetiraMoto.Text = "Motocicleta";
-            this.rdTipoRetiraMoto.UseVisualStyleBackColor = true;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(26, 41);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(129, 24);
-            this.label84.TabIndex = 13;
-            this.label84.Text = "Tipo vehículo:";
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(26, 103);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(61, 24);
-            this.label85.TabIndex = 12;
-            this.label85.Text = "Placa:";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(605, 655);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(158, 49);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Limpiar datos";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(422, 655);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(167, 49);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Retirar vehículo";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(155, 471);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(174, 28);
-            this.textBox10.TabIndex = 9;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Enabled = false;
-            this.textBox11.Location = new System.Drawing.Point(155, 407);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(311, 28);
-            this.textBox11.TabIndex = 8;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Enabled = false;
-            this.textBox12.Location = new System.Drawing.Point(217, 287);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(257, 28);
-            this.textBox12.TabIndex = 7;
-            // 
-            // btnBuscarPlacaRetiraVehiculo
-            // 
-            this.btnBuscarPlacaRetiraVehiculo.Location = new System.Drawing.Point(241, 96);
-            this.btnBuscarPlacaRetiraVehiculo.Name = "btnBuscarPlacaRetiraVehiculo";
-            this.btnBuscarPlacaRetiraVehiculo.Size = new System.Drawing.Size(160, 29);
-            this.btnBuscarPlacaRetiraVehiculo.TabIndex = 6;
-            this.btnBuscarPlacaRetiraVehiculo.Text = "Buscar Placa";
-            this.btnBuscarPlacaRetiraVehiculo.UseVisualStyleBackColor = true;
-            this.btnBuscarPlacaRetiraVehiculo.Click += new System.EventHandler(this.btnBuscarPlacaRetiraVehiculo_Click);
-            // 
-            // txtCedClienteRetira
-            // 
-            this.txtCedClienteRetira.Enabled = false;
-            this.txtCedClienteRetira.Location = new System.Drawing.Point(217, 348);
-            this.txtCedClienteRetira.Mask = "9-9999-9999";
-            this.txtCedClienteRetira.Name = "txtCedClienteRetira";
-            this.txtCedClienteRetira.Size = new System.Drawing.Size(130, 28);
-            this.txtCedClienteRetira.TabIndex = 5;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(26, 348);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(135, 24);
-            this.label86.TabIndex = 4;
-            this.label86.Text = "Cédula cliente:";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(26, 410);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(73, 24);
-            this.label87.TabIndex = 3;
-            this.label87.Text = "Correo:";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(26, 474);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(90, 24);
-            this.label88.TabIndex = 2;
-            this.label88.Text = "Telefono:";
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(26, 287);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(175, 24);
-            this.label89.TabIndex = 1;
-            this.label89.Text = "Nombre del cliente:";
             // 
             // frm_administrador
             // 
@@ -2371,6 +2401,9 @@ namespace GUI.Forms
             this.Text = "frm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_administrador_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.aparcadosEntreFechasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCNBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCN)).EndInit();
             this.EmpleadosTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.SubEmpleados.ResumeLayout(false);
@@ -2401,6 +2434,12 @@ namespace GUI.Forms
             this.gBoxClientes.ResumeLayout(false);
             this.gBoxClientes.PerformLayout();
             this.tabPage16.ResumeLayout(false);
+            this.tabPage16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridvehiculosActivos)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.tabPage15.ResumeLayout(false);
             this.tabPage15.PerformLayout();
             this.tabPage12.ResumeLayout(false);
@@ -2418,13 +2457,6 @@ namespace GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEditaParqueo)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aparcadosEntreFechasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetCN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetCNBindingSource)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2617,11 +2649,11 @@ namespace GUI.Forms
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.ComboBox cmbParqueoParaRetirarCarro;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label lbFechaIngresaRetiraVehiculo;
+        private System.Windows.Forms.Label lbFechaSaleRetiraVehiculo;
         private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtModeloRetiraVehiculo;
+        private System.Windows.Forms.TextBox txtMarcaRetiraVehiculo;
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Label label83;
@@ -2631,15 +2663,17 @@ namespace GUI.Forms
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Button btnRetirarVehiculo;
+        private System.Windows.Forms.TextBox txtTelefonoClienteRetira;
+        private System.Windows.Forms.TextBox txtCorreoClienteRetira;
+        private System.Windows.Forms.TextBox txtNombreClienteRetira;
         private System.Windows.Forms.Button btnBuscarPlacaRetiraVehiculo;
         private System.Windows.Forms.MaskedTextBox txtCedClienteRetira;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.DataGridView dataGridvehiculosActivos;
     }
 }

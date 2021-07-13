@@ -16,5 +16,22 @@ namespace Negocios.NegociosAparcar
         {
             return datAparc.InsertarAparcar(aparcar);
         }
+
+        public Boolean SalirAparcado(cl_ent_aparcar aparcar)
+        {
+            return datAparc.SalirAparcar(aparcar);
+        }
+
+
+        public DataTable BuscarCarroSalirParqueo(cl_ent_aparcar aparcar)
+        {
+            return datAparc.BuscarCarroSalirParqueo(aparcar);
+        }
+
+        public DataTable CargarCarrosActivosParqueos(cl_ent_aparcar aparcar)
+        {
+            return datAparc.CargarCarrosParqueo(aparcar);
+        }
+
     }
 }
