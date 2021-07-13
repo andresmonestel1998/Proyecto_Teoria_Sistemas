@@ -55,5 +55,16 @@ namespace GUI.Properties {
                 return ((string)(this["con"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RICOHCR-8JK36S2\\ANDRESBASE;Initial Catalog=ProyectoParqueo;Integrated" +
+            " Security=True")]
+        public string ProyectoParqueoConnectionString {
+            get {
+                return ((string)(this["ProyectoParqueoConnectionString"]));
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ using Negocios.NegociosRol;
 using Negocios.NegociosUsuario;
 using Negocios.NegociosParqueo;
 using Entidades.Entidades;
+using Negocios.NegociosAparcar;
 
 namespace GUI.Forms
 {
@@ -22,6 +23,8 @@ namespace GUI.Forms
         cl_ent_Usuario entUser = new cl_ent_Usuario();
         cl_ent_Parqueo entPar = new cl_ent_Parqueo();
         cl_neg_Parqueo negPar = new cl_neg_Parqueo();
+        cl_neg_Aparcar negApar = new cl_neg_Aparcar();
+        cl_ent_aparcar entApar = new cl_ent_aparcar();
         #endregion
 
         #region constructor
@@ -589,7 +592,55 @@ namespace GUI.Forms
 
         private void btnAparcarVehiculo_Click(object sender, EventArgs e)
         {
+            if(rdbTipoUsuarioCliente.Checked)
+            {
+                AparcarCliente();
+            }
+            else
+            {
+                AparcarInvitado();
+            }
+            CargarCMB();
+        }
+        public void AparcarCliente()
+        {
+            try
+            {
+                entApar._SCedJuParqueo = cmbCargarParqueos.SelectedValue.ToString();
+                entApar._SCedulaUsuario = txtCedBuscaGuardaVehiculo.Text;
+                if (rbTipoCarro.Checked)
+                    entApar._STipoVehiculo = "Carro";    
+                else
+                    entApar._STipoVehiculo = "Moto";
 
+                entApar._SPlacaVehiculo = txtGuardaVehiculoPlaca.Text;
+                entApar._SMarca = txtGuardaVehiculoMarca.Text;
+                entApar._SModelo = txtGuardaVehiculoModelo.Text;
+                entApar._DtFechaEntrada = DateTime.Now;
+
+                if (negApar.NuevoAparcado(entApar))
+                {
+                    MessageBox.Show("Se ha ingresado correctamente al parqueo", "Nuevo Aparcado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                }
+                else
+                    MessageBox.Show("No se ha ingresado correctamente", "Nuevo Aparcado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error", "Ingreso Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void AparcarInvitado()
+        {
+
+        }
+
+        private void frm_administrador_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

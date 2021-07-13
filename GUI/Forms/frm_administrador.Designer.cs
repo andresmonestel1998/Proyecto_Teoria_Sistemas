@@ -30,6 +30,7 @@ namespace GUI.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.EmpleadosTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.SubEmpleados = new System.Windows.Forms.TabControl();
@@ -198,6 +199,15 @@ namespace GUI.Forms
             this.label41 = new System.Windows.Forms.Label();
             this.tabCerrarSesion = new System.Windows.Forms.TabPage();
             this.TimerHoraIngresa = new System.Windows.Forms.Timer(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dataSetCN = new GUI.DataSet.DataSetCN();
+            this.dataSetCNBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aparcadosEntreFechasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aparcadosEntreFechasTableAdapter = new GUI.DataSet.DataSetCNTableAdapters.AparcadosEntreFechasTableAdapter();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.dtFechaInicioInforme = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaFinReporte = new System.Windows.Forms.DateTimePicker();
             this.EmpleadosTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SubEmpleados.SuspendLayout();
@@ -217,6 +227,7 @@ namespace GUI.Forms
             this.groupBox9.SuspendLayout();
             this.gBoxInvitados.SuspendLayout();
             this.gBoxClientes.SuspendLayout();
+            this.tabPage15.SuspendLayout();
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultarParqueo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -226,6 +237,9 @@ namespace GUI.Forms
             this.tabPage14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEditaParqueo)).BeginInit();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCNBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aparcadosEntreFechasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // EmpleadosTab
@@ -1342,6 +1356,11 @@ namespace GUI.Forms
             // 
             // tabPage15
             // 
+            this.tabPage15.Controls.Add(this.dtFechaFinReporte);
+            this.tabPage15.Controls.Add(this.dtFechaInicioInforme);
+            this.tabPage15.Controls.Add(this.label30);
+            this.tabPage15.Controls.Add(this.label28);
+            this.tabPage15.Controls.Add(this.reportViewer1);
             this.tabPage15.Location = new System.Drawing.Point(4, 32);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Size = new System.Drawing.Size(1711, 889);
@@ -1906,6 +1925,69 @@ namespace GUI.Forms
             this.TimerHoraIngresa.Enabled = true;
             this.TimerHoraIngresa.Tick += new System.EventHandler(this.TimerHoraIngresa_Tick);
             // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DataSetAparcados";
+            reportDataSource1.Value = this.aparcadosEntreFechasBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.Informes.ReporteAparcados.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(372, 29);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1265, 417);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // dataSetCN
+            // 
+            this.dataSetCN.DataSetName = "DataSetCN";
+            this.dataSetCN.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSetCNBindingSource
+            // 
+            this.dataSetCNBindingSource.DataSource = this.dataSetCN;
+            this.dataSetCNBindingSource.Position = 0;
+            // 
+            // aparcadosEntreFechasBindingSource
+            // 
+            this.aparcadosEntreFechasBindingSource.DataMember = "AparcadosEntreFechas";
+            this.aparcadosEntreFechasBindingSource.DataSource = this.dataSetCNBindingSource;
+            // 
+            // aparcadosEntreFechasTableAdapter
+            // 
+            this.aparcadosEntreFechasTableAdapter.ClearBeforeFill = true;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(39, 29);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(114, 23);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "Fecha Inicio:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(39, 144);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(93, 23);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Fecha Fin:";
+            // 
+            // dtFechaInicioInforme
+            // 
+            this.dtFechaInicioInforme.Location = new System.Drawing.Point(43, 69);
+            this.dtFechaInicioInforme.Name = "dtFechaInicioInforme";
+            this.dtFechaInicioInforme.Size = new System.Drawing.Size(323, 30);
+            this.dtFechaInicioInforme.TabIndex = 3;
+            // 
+            // dtFechaFinReporte
+            // 
+            this.dtFechaFinReporte.Location = new System.Drawing.Point(43, 206);
+            this.dtFechaFinReporte.Name = "dtFechaFinReporte";
+            this.dtFechaFinReporte.Size = new System.Drawing.Size(323, 30);
+            this.dtFechaFinReporte.TabIndex = 4;
+            // 
             // frm_administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1916,6 +1998,7 @@ namespace GUI.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_administrador_Load);
             this.EmpleadosTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.SubEmpleados.ResumeLayout(false);
@@ -1945,6 +2028,8 @@ namespace GUI.Forms
             this.gBoxInvitados.PerformLayout();
             this.gBoxClientes.ResumeLayout(false);
             this.gBoxClientes.PerformLayout();
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage15.PerformLayout();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridConsultarParqueo)).EndInit();
@@ -1960,6 +2045,9 @@ namespace GUI.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEditaParqueo)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCNBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aparcadosEntreFechasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2134,5 +2222,14 @@ namespace GUI.Forms
         private System.Windows.Forms.Label lbHoraIngresa;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Timer TimerHoraIngresa;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource aparcadosEntreFechasBindingSource;
+        private System.Windows.Forms.BindingSource dataSetCNBindingSource;
+        private DataSet.DataSetCN dataSetCN;
+        private DataSet.DataSetCNTableAdapters.AparcadosEntreFechasTableAdapter aparcadosEntreFechasTableAdapter;
+        private System.Windows.Forms.DateTimePicker dtFechaFinReporte;
+        private System.Windows.Forms.DateTimePicker dtFechaInicioInforme;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label28;
     }
 }
