@@ -48,8 +48,12 @@ namespace GUI.Forms
                 cmbCargarParqueos.DisplayMember = "v_nombre";
                 cmbCargarParqueos.ValueMember = "v_CedulaJuridicaParqueo";
 
-                
-             }
+                cmbInformeParqueo.DataSource = negPar.consultarPark();
+                cmbInformeParqueo.DisplayMember = "v_nombre";
+                cmbInformeParqueo.ValueMember = "v_CedulaJuridicaParqueo";
+
+
+        }
         #endregion
 
         #region Salir
@@ -639,8 +643,27 @@ namespace GUI.Forms
 
         private void frm_administrador_Load(object sender, EventArgs e)
         {
+            CargarInformeAparcados();
+        }
+        public void CargarInformeAparcados()
+        {
+            this.aparcadosEntreFechasTableAdapter.Fill(this.dataSetCN.AparcadosEntreFechas, dtFechaInicioInforme.Value, dtFechaFinReporte.Value, cmbInformeParqueo.SelectedValue.ToString());
+            this.repoAparcados.RefreshReport();
+        }
 
-            this.reportViewer1.RefreshReport();
+        private void btnInformeFechas_Click(object sender, EventArgs e)
+        {
+            CargarInformeAparcados();
+        }
+
+        private void btnBuscarPlacaRetiraVehiculo_Click(object sender, EventArgs e)
+        {
+            RetirarVehiculo();
+        }
+
+        public void RetirarVehiculo()
+        {
+
         }
     }
 }
