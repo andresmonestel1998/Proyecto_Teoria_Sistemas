@@ -11,6 +11,7 @@ using Negocios.NegociosRol;
 using Negocios.NegociosUsuario;
 using Negocios.NegociosParqueo;
 using Entidades.Entidades;
+using Negocios.NegociosAparcar;
 
 namespace GUI.Forms
 {
@@ -22,6 +23,8 @@ namespace GUI.Forms
         cl_ent_Usuario entUser = new cl_ent_Usuario();
         cl_ent_Parqueo entPar = new cl_ent_Parqueo();
         cl_neg_Parqueo negPar = new cl_neg_Parqueo();
+        cl_neg_Aparcar negApar = new cl_neg_Aparcar();
+        cl_ent_aparcar entApar = new cl_ent_aparcar();
         #endregion
 
         #region constructor
@@ -44,7 +47,15 @@ namespace GUI.Forms
                 cmbCargarParqueos.DataSource = negPar.consultarPark();
                 cmbCargarParqueos.DisplayMember = "v_nombre";
                 cmbCargarParqueos.ValueMember = "v_CedulaJuridicaParqueo";
-             }
+
+                cmbInformeParqueo.DataSource = negPar.consultarPark();
+                cmbInformeParqueo.DisplayMember = "v_nombre";
+                cmbInformeParqueo.ValueMember = "v_CedulaJuridicaParqueo";
+
+                cmbParqueoParaRetirarCarro.DataSource = negPar.consultarPark();
+                cmbParqueoParaRetirarCarro.DisplayMember = "v_nombre";
+                cmbParqueoParaRetirarCarro.ValueMember = "v_CedulaJuridicaParqueo";
+        }
         #endregion
 
         #region Salir
@@ -251,7 +262,7 @@ namespace GUI.Forms
             txt_Distrito.Text.Equals("") ||
             txtCamposDisponiblesParqueo.Text.Equals("")||
             txt_Calle.Text.Equals("") ||
-            txtTelParuqeo.Text.Equals("    -"))
+            txtTelParqueo.Text.Equals("    -"))
                 estado = false;
             return estado;
         }
@@ -263,7 +274,7 @@ namespace GUI.Forms
             txt_Canton.Text = "";
             txt_Distrito.Text = "";
             txt_Calle.Text = "";
-            txtTelParuqeo.Text = "";
+            txtTelParqueo.Text = "";
             txtCamposDisponiblesParqueo.Text = "";
         }
 
@@ -279,7 +290,7 @@ namespace GUI.Forms
                     entPar._SCanton = txt_Canton.Text;
                     entPar._SDistrito = txt_Distrito.Text;
                     entPar._SCalle = txt_Calle.Text;
-                    entPar._STelefono = txtTelParuqeo.Text;
+                    entPar._STelefono = txtTelParqueo.Text;
                     entPar._ICamposDisponibles = Convert.ToInt32( txtCamposDisponiblesParqueo.Text);
 
                     if (negPar.NuevoParqueo(entPar))
@@ -449,7 +460,8 @@ namespace GUI.Forms
                     else
                     {
                         txtGuardaVehiculoNombre.Text = row["v_nombreCompleto"].ToString();
-                    
+                        txtGuardaVehiculoCorreo.Text = row["v_correo"].ToString();
+                        txtGuardaVehiculoTelefono.Text = row["v_telefono"].ToString();
                     }
                 }
             }
@@ -474,8 +486,299 @@ namespace GUI.Forms
                 MessageBox.Show("Se ha producido un error, " + ex.Message);
             }
         }
+
+
         #endregion
 
+        #region  LimpiarParqueo
+        private void btn_LimpiarParqueo_Click(object sender, EventArgs e)
+        {
+            txt_NombreParqueo.Text = "";
+            mtb_CedulaJuridica.Text = "";
+            txtCamposDisponiblesParqueo.Text = "";
+            txtTelParqueo.Text = "";
+            mtb_Provincia.Text = "";
+            txt_Canton.Text = "";
+            txt_Distrito.Text = "";
+            txt_Calle.Text = "";
+        }
+        #endregion
+
+        #region LimpiarBusquedaParqueo
+        private void btnLimpiarBusquedaParqueo_Click(object sender, EventArgs e)
+        {
+            txtCedBuscarParqueo.Text = "";
+        }
+        #endregion
+
+        #region LimpiarModificarParqueo
+        private void btnLimpiarModificar_Click(object sender, EventArgs e)
+        {
+            txtEditParqueoNombre.Text = "";
+            txtEditParqueoProvincia.Text = "";
+            txtEditParqueoCanton.Text = "";
+            txtEditParqueoDistrito.Text = "";
+            txtEditParqueoCalle.Text = "";
+            txtEditParqueoTelefono.Text = "";
+            txtCamposDispEditarParqueo.Text = "";
+        }
+        #endregion
+
+        #region ConsularParqueoModificar
+        private void btn_ConsultarParqueoModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridEditaParqueo.DataSource = negPar.consultarPark();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error." + ex.Message);
+            }
+        }
+        #endregion
+
+        #region EditarParqueoGridView
+        private void dataGridEditaParqueo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int n = e.RowIndex;
+            if (n != -1)
+            {
+                txtEditParqueoNombre.Text = dataGridEditaParqueo.Rows[n].Cells[1].Value.ToString();
+                txtEditParqueoCedula.Text = dataGridEditaParqueo.Rows[n].Cells[0].Value.ToString();
+                txtCamposDispEditarParqueo.Text = dataGridEditaParqueo.Rows[n].Cells[7].Value.ToString();
+                txtEditParqueoTelefono.Text = dataGridEditaParqueo.Rows[n].Cells[6].Value.ToString();
+                txtEditParqueoProvincia.Text = dataGridEditaParqueo.Rows[n].Cells[2].Value.ToString();
+                txtEditParqueoCanton.Text = dataGridEditaParqueo.Rows[n].Cells[3].Value.ToString();
+                txtEditParqueoDistrito.Text = dataGridEditaParqueo.Rows[n].Cells[4].Value.ToString();
+                txtEditParqueoCalle.Text = dataGridEditaParqueo.Rows[n].Cells[5].Value.ToString();
+            }
+        }
+        #endregion
+
+        #region LimpiarBusquedaUsuario
+        private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
+        {
+            txtCeduBuscar.Text = "";
+        }
+        #endregion
+
+        #region LimpiarVehiculoCliente
+        private void btnLimpiarVehiculoCliente_Click(object sender, EventArgs e)
+        {
+            txtCedBuscaGuardaVehiculo.Text = "";
+            txtGuardaVehiculoNombre.Text = "";
+            txtGuardaVehiculoCorreo.Text = "";
+            txtGuardaVehiculoTelefono.Text = "";
+            txtGuardaVehiculoPlaca.Text = "";
+            txtGuardaVehiculoMarca.Text = "";
+            txtGuardaVehiculoModelo.Text = "";
+        }
+        #endregion
+
+        #region LimpiarVehiculoInvitado
+        private void btnLimpiarVehiculoInvitado_Click(object sender, EventArgs e)
+        {
+            txtCedInvitadoGuardaVehiculo.Text = "";
+            txtInvitadoVehiculoNombre.Text = "";
+            txtInvitadoVehiculoCorreo.Text = "";
+            txtInvitadoVehiculoTelefono.Text = "";
+            txtInvitadoVehiculoPlaca.Text = "";
+            txtInvitadoVehiculoMarca.Text = "";
+            txtInvitadoVehiculoModelo.Text = "";
+        }
+
+        #endregion
+
+        private void TimerHoraIngresa_Tick(object sender, EventArgs e)
+        {
+            lbFechaIngresa.Text = Convert.ToString(DateTime.Now.ToString("ddd, dd MMM yyy"));
+            lbHoraIngresa.Text = Convert.ToString(DateTime.Now.ToString("hh:mm:ss tt"));
+            lbFechaSaleRetiraVehiculo.Text = Convert.ToString(DateTime.Now);
+        }
+
+        private void btnAparcarVehiculo_Click(object sender, EventArgs e)
+        {
+            if(rdbTipoUsuarioCliente.Checked)
+            {
+                AparcarCliente();
+            }
+            else
+            {
+                AparcarInvitado();
+            }
+            CargarCMB();
+        }
+        public void AparcarCliente()
+        {
+            try
+            {
+                entApar._SCedJuParqueo = cmbCargarParqueos.SelectedValue.ToString();
+                entApar._SCedulaUsuario = txtCedBuscaGuardaVehiculo.Text;
+                if (rbTipoCarro.Checked)
+                    entApar._STipoVehiculo = "Carro";    
+                else
+                    entApar._STipoVehiculo = "Moto";
+
+                entApar._SPlacaVehiculo = txtGuardaVehiculoPlaca.Text;
+                entApar._SMarca = txtGuardaVehiculoMarca.Text;
+                entApar._SModelo = txtGuardaVehiculoModelo.Text;
+                entApar._DtFechaEntrada = DateTime.Now;
+
+                if (negApar.NuevoAparcado(entApar))
+                {
+                    MessageBox.Show("Se ha ingresado correctamente al parqueo", "Nuevo Aparcado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                }
+                else
+                    MessageBox.Show("No se ha ingresado correctamente", "Nuevo Aparcado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error", "Ingreso Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void AparcarInvitado()
+        {
+
+        }
+
+        private void frm_administrador_Load(object sender, EventArgs e)
+        {
+            CargarInformeAparcados();
+        }
+        public void CargarInformeAparcados()
+        {
+            this.aparcadosEntreFechasTableAdapter.Fill(this.dataSetCN.AparcadosEntreFechas, dtFechaInicioInforme.Value, dtFechaFinReporte.Value, cmbInformeParqueo.SelectedValue.ToString());
+            this.repoAparcados.RefreshReport();
+        }
+
+        private void btnInformeFechas_Click(object sender, EventArgs e)
+        {
+            CargarInformeAparcados();
+        }
+
+        private void btnBuscarPlacaRetiraVehiculo_Click(object sender, EventArgs e)
+        {
+            CargaVehiculosEnParqueo();
+        }
+
+        public void CargaVehiculosEnParqueo()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                entApar._SCedJuParqueo = cmbParqueoParaRetirarCarro.SelectedValue.ToString();
+                entApar._SPlacaVehiculo = txtPlacaRetiraVehiculo.Text;
+                if (rdTipoRetiraCarro.Checked)
+                    entApar._STipoVehiculo = "Carro";
+                else
+                    entApar._STipoVehiculo = "Moto";
+                entApar._BEstadVehiculo = true;
+
+                dt = negApar.BuscarCarroSalirParqueo(entApar);
+                if (dt != null)
+                {
+                    try
+                    {
+                        foreach(DataRow row in dt.Rows)
+                        {
+                            txtMarcaRetiraVehiculo.Text = row["v_marca"].ToString();
+                            txtModeloRetiraVehiculo.Text = row["v_modelo"].ToString();
+                            txtNombreClienteRetira.Text = row["v_nombreCompleto"].ToString(); 
+                            txtCedClienteRetira.Text = row["v_CedulaUsuario"].ToString(); 
+                            txtCorreoClienteRetira.Text = row["v_correo"].ToString(); 
+                            txtTelefonoClienteRetira.Text = row["v_telefono"].ToString(); 
+                            lbFechaIngresaRetiraVehiculo.Text = row["v_FechaHoraEntrada"].ToString();
+                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ha ocurrido un error " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                    MessageBox.Show("Esta placa no se encuentra en el parqueo activa", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error", "Ingreso Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cmbParqueoParaRetirarCarro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridvehiculosActivos.DataSource = null;
+            try
+            {
+                entApar._SCedJuParqueo = cmbParqueoParaRetirarCarro.SelectedValue.ToString();
+
+                if (negApar.CargarCarrosActivosParqueos(entApar) != null)
+                {
+                    dataGridvehiculosActivos.DataSource = negApar.CargarCarrosActivosParqueos(entApar);
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error", "Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
+        private void dataGridvehiculosActivos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtPlacaRetiraVehiculo.Text = dataGridvehiculosActivos.CurrentRow.Cells[0].Value.ToString();
+            txtMarcaRetiraVehiculo.Text = dataGridvehiculosActivos.CurrentRow.Cells[1].Value.ToString();
+            txtModeloRetiraVehiculo.Text = dataGridvehiculosActivos.CurrentRow.Cells[2].Value.ToString();
+            txtNombreClienteRetira.Text = dataGridvehiculosActivos.CurrentRow.Cells[3].Value.ToString();
+            txtCedClienteRetira.Text = dataGridvehiculosActivos.CurrentRow.Cells[4].Value.ToString();
+            txtCorreoClienteRetira.Text = dataGridvehiculosActivos.CurrentRow.Cells[5].Value.ToString();
+            txtTelefonoClienteRetira.Text = dataGridvehiculosActivos.CurrentRow.Cells[6].Value.ToString();
+            lbFechaIngresaRetiraVehiculo.Text = dataGridvehiculosActivos.CurrentRow.Cells[7].Value.ToString();
+
+            if (dataGridvehiculosActivos.CurrentRow.Cells[8].Value.ToString().Equals("Carro"))
+                rdTipoRetiraCarro.Checked=true;
+            else
+                rdTipoRetiraMoto.Checked= true;
+
+        }
+
+        private void btnRetirarVehiculo_Click(object sender, EventArgs e)
+        {
+            RetirarVehiculo();
+        }
+
+        public void RetirarVehiculo()
+        {
+            try
+            {
+                entApar._SCedJuParqueo = cmbParqueoParaRetirarCarro.SelectedValue.ToString();
+                entApar._SCedulaUsuario = txtCedClienteRetira.Text;
+                if (rdTipoRetiraCarro.Checked)
+                    entApar._STipoVehiculo = "Carro";
+                else
+                    entApar._STipoVehiculo = "Moto";
+
+                entApar._SPlacaVehiculo = txtPlacaRetiraVehiculo.Text;
+                entApar._DtFechaHoraSalida = DateTime.Now;
+                entApar._BEstadVehiculo = true;
+
+                if (negApar.SalirAparcado(entApar))
+                {
+                    MessageBox.Show("Se ha liberado correctamente el vehiculo del parqueo", "Aparcado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                    MessageBox.Show("No se ha liberado correctamente", "Aparcado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error", "Ingreso Parqueo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
     }
 }
